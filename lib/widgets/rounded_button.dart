@@ -31,7 +31,9 @@ class RoundedButton extends StatelessWidget {
           horizontal: horizontalMargin,
         ),
         padding: EdgeInsets.symmetric(
-            vertical: verticalPadding, horizontal: horizontalPadding),
+          vertical: verticalPadding,
+          horizontal: horizontalPadding,
+        ),
         decoration: BoxDecoration(
           color: kMainBlueColor,
           borderRadius: BorderRadius.circular(30),
