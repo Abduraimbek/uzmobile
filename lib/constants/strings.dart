@@ -1,6 +1,6 @@
 import 'dart:core';
 
-class StringsForLanguageChange {
+class AllStrings {
   static List<String> uzbekdaDavomEttirish = [
     "O'zbek tilida davom ettirish",
     "Продолжить на русском",
