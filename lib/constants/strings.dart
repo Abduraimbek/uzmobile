@@ -11,4 +11,10 @@ class AllStrings {
     "Начать",
     "Start",
   ];
+
+  static List<String> tillar = [
+    "O'zbek",
+    "Русский",
+    "English",
+  ];
 }
