@@ -27,7 +27,7 @@ class RoundedButton extends StatelessWidget {
         width: double.infinity,
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(
-          vertical: 16,
+          vertical: 10,
           horizontal: horizontalMargin,
         ),
         padding: EdgeInsets.symmetric(
