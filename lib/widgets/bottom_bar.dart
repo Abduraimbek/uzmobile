@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uzmobile/constants/constants.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class BottomBar extends StatelessWidget {
   @override
@@ -16,7 +18,7 @@ class BottomBar extends StatelessWidget {
               topLeft: Radius.circular(25),
               topRight: Radius.circular(25),
             ),
-            color: Colors.white),
+            color: kMainBlueColor),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -27,12 +29,12 @@ class BottomBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(
-                    Icons.home,
-                    color: Color(0xFFEF7532),
+                    FlutterIcons.ios_person_ion,
+                    color: Colors.white,
                   ),
                   Icon(
-                    Icons.person_outline,
-                    color: Color(0xFF676E79),
+                    FlutterIcons.credit_ent,
+                    color: Colors.white,
                   )
                 ],
               ),
@@ -44,12 +46,12 @@ class BottomBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(
-                    Icons.search,
-                    color: Color(0xFFEF7532),
+                    FlutterIcons.ios_globe_ion,
+                    color: Colors.white,
                   ),
                   Icon(
-                    Icons.shopping_basket,
-                    color: Color(0xFF676E79),
+                    FlutterIcons.ios_settings_ion,
+                    color: Colors.white,
                   )
                 ],
               ),
