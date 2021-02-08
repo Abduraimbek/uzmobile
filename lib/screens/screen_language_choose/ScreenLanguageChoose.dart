@@ -19,7 +19,8 @@ class ScreenLanguageChoose extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-        )
+        ),
+        SizedBox(),
       ],
     );
   }
