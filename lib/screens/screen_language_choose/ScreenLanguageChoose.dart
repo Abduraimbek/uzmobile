@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/strings.dart';
+import 'package:uzmobile/screens/screen_home/screen_home.dart';
 import 'package:uzmobile/widgets/rounded_button.dart';
 
 class ScreenLanguageChoose extends StatelessWidget {
@@ -29,19 +30,34 @@ class ScreenLanguageChoose extends StatelessWidget {
           ),
           RoundedButton(
             text: AllStrings.tillar[0],
-            press: () {},
+            press: () {
+              Navigator.pushNamed(
+                context,
+                ScreenHome.routeName,
+              );
+            },
             verticalPadding: 19,
             horizontalMargin: 25,
           ),
           RoundedButton(
             text: AllStrings.tillar[1],
-            press: () {},
+            press: () {
+              Navigator.pushNamed(
+                context,
+                ScreenHome.routeName,
+              );
+            },
             verticalPadding: 19,
             horizontalMargin: 25,
           ),
           RoundedButton(
             text: AllStrings.tillar[2],
-            press: () {},
+            press: () {
+              Navigator.pushNamed(
+                context,
+                ScreenHome.routeName,
+              );
+            },
             verticalPadding: 19,
             horizontalMargin: 25,
           ),

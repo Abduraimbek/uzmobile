@@ -1,7 +1,7 @@
 enum MenuState {
-  home,
   connectWithOperator,
+  checkBalance,
+  home,
   internet,
   settings,
-  checkBalance,
 }
