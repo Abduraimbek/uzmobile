@@ -1,6 +1,5 @@
-import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/widgets/bottom_bar.dart';
 
 class ScreenHome extends StatefulWidget {
   static String routeName = '/ScreenHome';
@@ -10,19 +9,33 @@ class ScreenHome extends StatefulWidget {
 }
 
 class _ScreenHomeState extends State<ScreenHome> {
+  int currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = 0;
+  }
+
+  void changePage(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Uzmobile '),
+      ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
-        backgroundColor: kMainBlueColor,
         onPressed: () {},
+        backgroundColor: Color(0xFFF17532),
+        child: Icon(Icons.home),
       ),
-      bottomNavigationBar: BubbleBottomBar(
-        opacity: 0.2,
-        backgroundColor: Colors.white,
-        items: [],
-      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomBar(),
     );
   }
 }
