@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: kSecondBlueColor, // navigation bar color
+      systemNavigationBarColor: kMainBlueColor, // navigation bar color
       // statusBarColor: Colors.pink, // status bar color
     ));
     return MaterialApp(
