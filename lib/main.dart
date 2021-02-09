@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: kMainBlueColor, // navigation bar color
-      // statusBarColor: Colors.pink, // status bar color
-    ));
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //   systemNavigationBarColor: kSecondBlueColor, // navigation bar color
+    //   // statusBarColor: Colors.pink, // status bar color
+    // ));
     return MaterialApp(
       title: 'uzmobile',
-      theme: theme(),
+      // theme: theme(),
       debugShowCheckedModeBanner: false,
       routes: routes,
       initialRoute: ScreenHome.routeName,

@@ -10,7 +10,6 @@ class ScreenHome extends StatefulWidget {
   _ScreenHomeState createState() => _ScreenHomeState();
 }
 
-//
 class _ScreenHomeState extends State<ScreenHome> {
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,10 @@ class _ScreenHomeState extends State<ScreenHome> {
       color: kMainBlueColor,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Uzmobile'),
+          title: Text(
+            'Uzmobile',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           actions: [
             GestureDetector(
               onTap: () {},
