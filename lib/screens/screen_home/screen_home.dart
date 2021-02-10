@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
 
@@ -39,15 +40,19 @@ class _ScreenHomeState extends State<ScreenHome> {
           },
         ),
         actions: [
-          GestureDetector(
-            onTap: () {},
+          InkWell(
+            onTap: () {
+              launch(
+                "https://telegram.me/abduraimbek",
+              );
+            },
             child: Icon(
               FlutterIcons.telegram_mco,
               size: 30,
             ),
           ),
           SizedBox(width: 15),
-          GestureDetector(
+          InkWell(
             onTap: () {},
             child: Icon(
               FlutterIcons.bell_mco,

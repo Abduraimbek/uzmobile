@@ -1,7 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:uzmobile/constants/shared_preferences.dart';
+import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
+
+import 'package:intent/intent.dart' as android_intent;
+import 'package:intent/action.dart' as android_action;
 
 class BottomBar extends StatelessWidget {
   @override
@@ -29,15 +36,25 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(
-                    FlutterIcons.ios_person_ion,
-                    color: Colors.white,
-                    size: 30,
+                  GestureDetector(
+                    onTap: () {
+                      _launchURL("+998888334240", context);
+                    },
+                    child: Icon(
+                      FlutterIcons.ios_person_ion,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
-                  Icon(
-                    FlutterIcons.credit_ent,
-                    color: Colors.white,
-                    size: 30,
+                  GestureDetector(
+                    onTap: () {
+                      _launchURL("*100#", context);
+                    },
+                    child: Icon(
+                      FlutterIcons.credit_ent,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   )
                 ],
               ),
@@ -48,10 +65,15 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(
-                    FlutterIcons.ios_globe_ion,
-                    color: Colors.white,
-                    size: 30,
+                  GestureDetector(
+                    onTap: () {
+                      _launchURL("*103#", context);
+                    },
+                    child: Icon(
+                      FlutterIcons.ios_globe_ion,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -70,6 +92,32 @@ class BottomBar extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+_launchURL(String uSSDCode, context) async {
+  // Replace 12345678 with your tel. no.
+
+  if (await Permission.phone.request().isGranted) {
+    android_intent.Intent()
+      ..setAction(android_action.Action.ACTION_CALL)
+      ..setData(Uri(scheme: "tel", path: uSSDCode))
+      ..startActivity().catchError((e) => print(e));
+  } else {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(
+          AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
+          textAlign: TextAlign.center,
+        ),
+        content: Icon(
+          Icons.error_outline,
+          color: Colors.red,
+          size: 70,
         ),
       ),
     );

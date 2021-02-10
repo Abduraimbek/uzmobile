@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uzmobile/constants/routes.dart';
+import 'package:uzmobile/screens/screen_first_screen/screen_first_screen.dart';
 import 'package:uzmobile/screens/screen_home/screen_home.dart';
-import 'package:uzmobile/screens/screen_language_choose/ScreenLanguageChoose.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       // theme: theme(),
       debugShowCheckedModeBanner: false,
       routes: routes,
-      initialRoute: ScreenLanguageChoose.routeName,
+      initialRoute: ScreenFirstScreen.routeName,
     );
   }
 }
