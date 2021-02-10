@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/routes.dart';
-import 'package:uzmobile/constants/theme.dart';
 import 'package:uzmobile/screens/screen_home/screen_home.dart';
+import 'package:uzmobile/screens/screen_language_choose/ScreenLanguageChoose.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,16 +15,18 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    //   systemNavigationBarColor: kSecondBlueColor, // navigation bar color
-    //   // statusBarColor: Colors.pink, // status bar color
-    // ));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.black, // navigation bar color
+      // systemNavigationBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
+      // statusBarColor: Colors.pink, // status bar color
+    ));
     return MaterialApp(
       title: 'uzmobile',
       // theme: theme(),
       debugShowCheckedModeBanner: false,
       routes: routes,
-      initialRoute: ScreenHome.routeName,
+      initialRoute: ScreenLanguageChoose.routeName,
     );
   }
 }

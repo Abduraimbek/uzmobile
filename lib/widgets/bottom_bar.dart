@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
 
 class BottomBar extends StatelessWidget {
   @override
@@ -31,10 +32,12 @@ class BottomBar extends StatelessWidget {
                   Icon(
                     FlutterIcons.ios_person_ion,
                     color: Colors.white,
+                    size: 30,
                   ),
                   Icon(
                     FlutterIcons.credit_ent,
                     color: Colors.white,
+                    size: 30,
                   )
                 ],
               ),
@@ -48,10 +51,20 @@ class BottomBar extends StatelessWidget {
                   Icon(
                     FlutterIcons.ios_globe_ion,
                     color: Colors.white,
+                    size: 30,
                   ),
-                  Icon(
-                    FlutterIcons.ios_settings_ion,
-                    color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        SettingsLanguageScreen.routeName,
+                      );
+                    },
+                    child: Icon(
+                      FlutterIcons.ios_settings_ion,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   )
                 ],
               ),

@@ -17,4 +17,10 @@ class AllStrings {
     "Русский",
     "English",
   ];
+
+  static List<String> til = [
+    "Til",
+    "Язык",
+    "Language",
+  ];
 }
