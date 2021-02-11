@@ -21,11 +21,12 @@ class BottomBar extends StatelessWidget {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25),
-              topRight: Radius.circular(25),
-            ),
-            color: kMainBlueColor),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
+          ),
+          color: kBottomBarColor,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -43,7 +44,7 @@ class BottomBar extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
-                          FlutterIcons.ios_person_ion,
+                          FlutterIcons.customerservice_ant,
                           color: Colors.white,
                           size: 30,
                         ),
@@ -100,7 +101,7 @@ class BottomBar extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
-                          FlutterIcons.ios_settings_ion,
+                          FlutterIcons.settings_sli,
                           color: Colors.white,
                           size: 30,
                         ),

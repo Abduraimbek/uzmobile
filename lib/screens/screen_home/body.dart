@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/screens/screen_home/carousel.dart';
 
 import 'widget_card.dart';
@@ -12,41 +14,27 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Column(
-          children: <Widget>[
-            Expanded(
-              child: Container(
-                color: kMainBlueColor,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.white,
-              ),
-            ),
-          ],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        SizedBox(height: 5),
+        Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.cover,
+          width: SizeConfig.screenWidth * 0.5,
         ),
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 30,
-                  right: 30,
-                ),
-                child: Carousel(),
-              ),
-              Expanded(
-                child: WidgetCard(),
-              ),
-            ],
+        SizedBox(height: 5),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 30,
+            right: 30,
           ),
+          child: Carousel(),
+        ),
+        SizedBox(height: 10),
+        Expanded(
+          child: WidgetCard(),
         ),
       ],
     );

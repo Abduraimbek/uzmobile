@@ -30,8 +30,8 @@ class _ScreenHomeState extends State<ScreenHome> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: kMainBlueColor,
+        title: Text(''),
+        elevation: 4,
         leading: IconButton(
           icon: Icon(
             FlutterIcons.menu_mco,
@@ -43,13 +43,6 @@ class _ScreenHomeState extends State<ScreenHome> {
           },
         ),
         centerTitle: false,
-        title: Text(
-          "UZMOBILE",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         actions: [
           InkWell(
             onTap: () {
@@ -60,6 +53,7 @@ class _ScreenHomeState extends State<ScreenHome> {
             child: Icon(
               FlutterIcons.telegram_mco,
               size: 30,
+              color: Colors.white,
             ),
           ),
           SizedBox(width: 15),
@@ -70,6 +64,7 @@ class _ScreenHomeState extends State<ScreenHome> {
             child: Icon(
               FlutterIcons.bell_mco,
               size: 30,
+              color: Colors.white,
             ),
           ),
           SizedBox(width: 10),
@@ -78,10 +73,11 @@ class _ScreenHomeState extends State<ScreenHome> {
       drawer: Drawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color(0xFFF17532),
+        backgroundColor: kOrange,
         child: Icon(
-          FlutterIcons.md_home_ion,
+          FlutterIcons.home_ant,
           size: 30,
+          color: Colors.white,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
