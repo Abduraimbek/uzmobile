@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
+import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
+
+import 'body.dart';
 
 class ScreenHome extends StatefulWidget {
   static String routeName = '/ScreenHome';
@@ -22,13 +26,12 @@ class _ScreenHomeState extends State<ScreenHome> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(
-          'Uzmobile',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        elevation: 0,
+        backgroundColor: kMainBlueColor,
         leading: IconButton(
           icon: Icon(
             FlutterIcons.menu_mco,
@@ -38,6 +41,14 @@ class _ScreenHomeState extends State<ScreenHome> {
           onPressed: () {
             _scaffoldKey.currentState.openDrawer();
           },
+        ),
+        centerTitle: false,
+        title: Text(
+          "UZMOBILE",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           InkWell(
@@ -53,7 +64,9 @@ class _ScreenHomeState extends State<ScreenHome> {
           ),
           SizedBox(width: 15),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              // todo
+            },
             child: Icon(
               FlutterIcons.bell_mco,
               size: 30,
@@ -73,6 +86,7 @@ class _ScreenHomeState extends State<ScreenHome> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),
+      body: Body(),
     );
   }
 }

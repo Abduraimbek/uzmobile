@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:uzmobile/constants/constants.dart';
@@ -36,24 +35,34 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GestureDetector(
+                  InkWell(
                     onTap: () {
                       _launchURL("+998888334240", context);
                     },
-                    child: Icon(
-                      FlutterIcons.ios_person_ion,
-                      color: Colors.white,
-                      size: 30,
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          FlutterIcons.ios_person_ion,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
                     ),
                   ),
-                  GestureDetector(
+                  InkWell(
                     onTap: () {
                       _launchURL("*100#", context);
                     },
-                    child: Icon(
-                      FlutterIcons.credit_ent,
-                      color: Colors.white,
-                      size: 30,
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          FlutterIcons.credit_ent,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
                     ),
                   )
                 ],
@@ -65,27 +74,37 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GestureDetector(
+                  InkWell(
                     onTap: () {
                       _launchURL("*103#", context);
                     },
-                    child: Icon(
-                      FlutterIcons.ios_globe_ion,
-                      color: Colors.white,
-                      size: 30,
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          FlutterIcons.ios_globe_ion,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
                     ),
                   ),
-                  GestureDetector(
+                  InkWell(
                     onTap: () {
                       Navigator.pushNamed(
                         context,
                         SettingsLanguageScreen.routeName,
                       );
                     },
-                    child: Icon(
-                      FlutterIcons.ios_settings_ion,
-                      color: Colors.white,
-                      size: 30,
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          FlutterIcons.ios_settings_ion,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
                     ),
                   )
                 ],

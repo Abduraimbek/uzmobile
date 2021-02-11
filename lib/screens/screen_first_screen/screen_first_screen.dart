@@ -1,7 +1,6 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/screens/screen_home/screen_home.dart';
 import 'package:uzmobile/screens/screen_language_choose/ScreenLanguageChoose.dart';
 
