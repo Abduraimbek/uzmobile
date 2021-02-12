@@ -3,7 +3,6 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
-import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
 
 import 'body.dart';
