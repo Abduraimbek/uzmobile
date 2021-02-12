@@ -3,6 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
+import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
 
 import 'body.dart';
@@ -28,12 +29,13 @@ class _ScreenHomeState extends State<ScreenHome> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
+        toolbarHeight: 7.5 * SizeConfig.safeBlockVertical,
         title: Text(''),
         elevation: 4,
         leading: IconButton(
           icon: Icon(
             FlutterIcons.menu_mco,
-            size: 30,
+            size: 8 * SizeConfig.safeBlockHorizontal,
             color: Colors.white,
           ),
           onPressed: () {
@@ -50,22 +52,22 @@ class _ScreenHomeState extends State<ScreenHome> {
             },
             child: Icon(
               FlutterIcons.telegram_mco,
-              size: 30,
+              size: 9 * SizeConfig.safeBlockHorizontal,
               color: Colors.white,
             ),
           ),
-          SizedBox(width: 15),
+          SizedBox(width: 4 * SizeConfig.safeBlockHorizontal),
           InkWell(
             onTap: () {
               // todo
             },
             child: Icon(
               FlutterIcons.bell_mco,
-              size: 30,
+              size: 8 * SizeConfig.safeBlockHorizontal,
               color: Colors.white,
             ),
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 3.5 * SizeConfig.safeBlockHorizontal),
         ],
       ),
       drawer: Drawer(),
@@ -74,7 +76,7 @@ class _ScreenHomeState extends State<ScreenHome> {
         backgroundColor: kOrange,
         child: Icon(
           FlutterIcons.home_ant,
-          size: 30,
+          size: 9 * SizeConfig.safeBlockHorizontal,
           color: Colors.white,
         ),
       ),

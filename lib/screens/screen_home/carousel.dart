@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/size_config.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
@@ -26,6 +27,7 @@ class _CarouselState extends State<Carousel> {
         items: imageSliders,
         options: CarouselOptions(
             autoPlay: true,
+            height: 20 * SizeConfig.safeBlockVertical,
             viewportFraction: 1,
             autoPlayInterval: Duration(seconds: 5),
             enlargeCenterPage: false,
@@ -41,9 +43,12 @@ class _CarouselState extends State<Carousel> {
         children: imgList.map((url) {
           int index = imgList.indexOf(url);
           return Container(
-            width: 8.0,
-            height: 8.0,
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+            width: 2.0 * SizeConfig.safeBlockHorizontal,
+            height: 2.0 * SizeConfig.safeBlockVertical,
+            margin: EdgeInsets.symmetric(
+              vertical: 1 * SizeConfig.safeBlockVertical,
+              horizontal: .8 * SizeConfig.safeBlockHorizontal,
+            ),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: _current == index ? kBottomBarColor : kCardIconBackColor,
@@ -60,7 +65,7 @@ final List<Widget> imageSliders = imgList
           child: Container(
             child: ClipRRect(
               borderRadius: BorderRadius.all(
-                Radius.circular(10.0),
+                Radius.circular(3 * SizeConfig.safeBlockHorizontal),
               ),
               child: Image.network(
                 item,

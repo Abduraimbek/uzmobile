@@ -3,6 +3,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
+import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
 
@@ -14,16 +15,16 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: CircularNotchedRectangle(),
-      notchMargin: 10,
+      notchMargin: 1.2 * SizeConfig.safeBlockVertical,
       color: Colors.transparent,
-      elevation: 9,
+      elevation: 5 * SizeConfig.safeBlockHorizontal,
       clipBehavior: Clip.antiAlias,
       child: Container(
-        height: 60,
+        height: 8 * SizeConfig.safeBlockVertical,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25),
-            topRight: Radius.circular(25),
+            topLeft: Radius.circular(7 * SizeConfig.safeBlockHorizontal),
+            topRight: Radius.circular(7 * SizeConfig.safeBlockHorizontal),
           ),
           color: kBottomBarColor,
         ),
@@ -31,8 +32,8 @@ class BottomBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width / 2 - 40,
+              width: SizeConfig.screenWidth / 2 -
+                  10 * SizeConfig.safeBlockHorizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -46,7 +47,7 @@ class BottomBar extends StatelessWidget {
                         child: Icon(
                           FlutterIcons.customerservice_ant,
                           color: Colors.white,
-                          size: 30,
+                          size: 8 * SizeConfig.safeBlockHorizontal,
                         ),
                       ),
                     ),
@@ -61,7 +62,7 @@ class BottomBar extends StatelessWidget {
                         child: Icon(
                           FlutterIcons.credit_ent,
                           color: Colors.white,
-                          size: 30,
+                          size: 8 * SizeConfig.safeBlockHorizontal,
                         ),
                       ),
                     ),
@@ -70,8 +71,8 @@ class BottomBar extends StatelessWidget {
               ),
             ),
             Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width / 2 - 40,
+              width: SizeConfig.screenWidth / 2 -
+                  10 * SizeConfig.safeBlockHorizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -85,7 +86,7 @@ class BottomBar extends StatelessWidget {
                         child: Icon(
                           FlutterIcons.ios_globe_ion,
                           color: Colors.white,
-                          size: 30,
+                          size: 8 * SizeConfig.safeBlockHorizontal,
                         ),
                       ),
                     ),
@@ -103,7 +104,7 @@ class BottomBar extends StatelessWidget {
                         child: Icon(
                           FlutterIcons.settings_sli,
                           color: Colors.white,
-                          size: 30,
+                          size: 8 * SizeConfig.safeBlockHorizontal,
                         ),
                       ),
                     ),
@@ -137,7 +138,7 @@ _launchURL(String uSSDCode, context) async {
         content: Icon(
           Icons.error_outline,
           color: Colors.red,
-          size: 70,
+          size: 20 * SizeConfig.safeBlockHorizontal,
         ),
       ),
     );

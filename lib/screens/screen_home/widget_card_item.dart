@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/size_config.dart';
 
 class WidgetCardItem extends StatelessWidget {
   final IconData iconData;
@@ -23,20 +24,21 @@ class WidgetCardItem extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(3 * SizeConfig.safeBlockHorizontal),
               child: Icon(
                 iconData,
                 color: kMainBlueColor,
-                size: 50,
+                size: 11 * SizeConfig.safeBlockHorizontal,
               ),
             ),
           ),
-          SizedBox(height: 5),
+          SizedBox(height: 0.8 * SizeConfig.safeBlockVertical),
           Text(
             title,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: kTextColor,
+              fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
+              color: Colors.black54,
             ),
           )
         ],

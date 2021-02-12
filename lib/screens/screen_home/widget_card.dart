@@ -8,10 +8,10 @@ class WidgetCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 30,
-        right: 30,
-        bottom: 40,
+      padding: EdgeInsets.only(
+        left: 7.5 * SizeConfig.safeBlockHorizontal,
+        right: 7.5 * SizeConfig.safeBlockHorizontal,
+        bottom: 5 * SizeConfig.safeBlockVertical,
       ),
       child: Column(
         children: [
@@ -20,12 +20,14 @@ class WidgetCard extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(
+                  3 * SizeConfig.safeBlockHorizontal,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey,
                     offset: Offset(0.0, 1.0), //(x,y)
-                    blurRadius: 6.0,
+                    blurRadius: 2 * SizeConfig.safeBlockHorizontal,
                   ),
                 ],
               ),
@@ -74,9 +76,12 @@ class WidgetCard extends StatelessWidget {
             ),
           ),
           Container(
-            width: 8.0,
-            height: 8.0,
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+            width: 2.0 * SizeConfig.safeBlockHorizontal,
+            height: 2.0 * SizeConfig.safeBlockVertical,
+            margin: EdgeInsets.symmetric(
+              vertical: 1 * SizeConfig.safeBlockVertical,
+              horizontal: .8 * SizeConfig.safeBlockHorizontal,
+            ),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.black,
