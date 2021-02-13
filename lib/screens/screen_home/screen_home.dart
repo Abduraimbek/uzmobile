@@ -5,6 +5,7 @@ import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
+import 'package:uzmobile/widgets/drawer.dart';
 
 import 'body.dart';
 
@@ -29,6 +30,7 @@ class _ScreenHomeState extends State<ScreenHome> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
+        backgroundColor: kMainBlueColor,
         toolbarHeight: 7.5 * SizeConfig.safeBlockVertical,
         title: Text(''),
         elevation: 4,
@@ -70,7 +72,9 @@ class _ScreenHomeState extends State<ScreenHome> {
           SizedBox(width: 3.5 * SizeConfig.safeBlockHorizontal),
         ],
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: CustomDrawer(),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: kOrange,

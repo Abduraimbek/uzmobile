@@ -67,8 +67,8 @@ final List<Widget> imageSliders = imgList
               borderRadius: BorderRadius.all(
                 Radius.circular(3 * SizeConfig.safeBlockHorizontal),
               ),
-              child: Image.network(
-                item,
+              child: Image.asset(
+                'assets/images/uzmobile_blue.png',
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),

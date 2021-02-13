@@ -30,6 +30,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        backgroundColor: kMainBlueColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

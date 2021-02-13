@@ -5,11 +5,13 @@ import 'package:uzmobile/constants/size_config.dart';
 class WidgetCardItem extends StatelessWidget {
   final IconData iconData;
   final String title;
+  final Function onPress;
 
   const WidgetCardItem({
     Key key,
     @required this.iconData,
     @required this.title,
+    @required this.onPress,
   }) : super(key: key);
 
   @override
@@ -18,17 +20,20 @@ class WidgetCardItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              color: kCardIconBackColor,
-              shape: BoxShape.circle,
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(3 * SizeConfig.safeBlockHorizontal),
-              child: Icon(
-                iconData,
-                color: kMainBlueColor,
-                size: 11 * SizeConfig.safeBlockHorizontal,
+          InkWell(
+            onTap: onPress,
+            child: Container(
+              decoration: BoxDecoration(
+                color: kCardIconBackColor,
+                shape: BoxShape.circle,
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(3 * SizeConfig.safeBlockHorizontal),
+                child: Icon(
+                  iconData,
+                  color: kMainBlueColor,
+                  size: 11 * SizeConfig.safeBlockHorizontal,
+                ),
               ),
             ),
           ),
