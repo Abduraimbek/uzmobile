@@ -26,8 +26,8 @@ class _BodyState extends State<Body> {
         SizedBox(height: 1.5 * SizeConfig.safeBlockVertical),
         Padding(
           padding: EdgeInsets.only(
-            left: 7.5 * SizeConfig.safeBlockHorizontal,
-            right: 7.5 * SizeConfig.safeBlockHorizontal,
+            left: 3 * SizeConfig.safeBlockHorizontal,
+            right: 3 * SizeConfig.safeBlockHorizontal,
           ),
           child: Carousel(),
         ),

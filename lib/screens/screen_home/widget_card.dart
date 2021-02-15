@@ -20,8 +20,8 @@ class _WidgetCardState extends State<WidgetCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: 7.5 * SizeConfig.safeBlockHorizontal,
-        right: 7.5 * SizeConfig.safeBlockHorizontal,
+        left: 3 * SizeConfig.safeBlockHorizontal,
+        right: 3 * SizeConfig.safeBlockHorizontal,
         bottom: 5 * SizeConfig.safeBlockVertical,
       ),
       child: Column(
