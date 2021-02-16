@@ -25,7 +25,6 @@ class _ScreenFirstScreenState extends State<ScreenFirstScreen>
         ),
       );
     } else {
-      await prefs.setBool('seen', true);
       Navigator.of(context).pushReplacement(
         new MaterialPageRoute(
           builder: (context) => ScreenLanguageChoose(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/screen_home/screen_home.dart';
@@ -31,9 +32,11 @@ class ScreenLanguageChoose extends StatelessWidget {
           ),
           RoundedButton(
             text: AllStrings.tillar[0],
-            press: () {
+            press: () async {
               SharedPrefHelper.changeLanguage(0);
-              Navigator.pushNamed(
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('seen', true);
+              Navigator.popAndPushNamed(
                 context,
                 ScreenHome.routeName,
               );
@@ -43,9 +46,11 @@ class ScreenLanguageChoose extends StatelessWidget {
           ),
           RoundedButton(
             text: AllStrings.tillar[1],
-            press: () {
+            press: () async {
               SharedPrefHelper.changeLanguage(1);
-              Navigator.pushNamed(
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('seen', true);
+              Navigator.popAndPushNamed(
                 context,
                 ScreenHome.routeName,
               );
@@ -55,9 +60,11 @@ class ScreenLanguageChoose extends StatelessWidget {
           ),
           RoundedButton(
             text: AllStrings.tillar[2],
-            press: () {
+            press: () async {
               SharedPrefHelper.changeLanguage(2);
-              Navigator.pushNamed(
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('seen', true);
+              Navigator.popAndPushNamed(
                 context,
                 ScreenHome.routeName,
               );
