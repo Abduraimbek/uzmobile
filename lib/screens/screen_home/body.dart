@@ -6,6 +6,15 @@ import 'package:uzmobile/screens/screen_home/carousel.dart';
 import 'widget_card.dart';
 
 class Body extends StatefulWidget {
+  final int chosenLanguage;
+  final Function() notifyParent;
+
+  const Body({
+    Key key,
+    @required this.chosenLanguage,
+    @required this.notifyParent,
+  }) : super(key: key);
+
   @override
   _BodyState createState() => _BodyState();
 }
@@ -33,7 +42,12 @@ class _BodyState extends State<Body> {
         ),
         SizedBox(height: 2.5 * SizeConfig.safeBlockVertical),
         Expanded(
-          child: WidgetCard(),
+          child: WidgetCard(
+            chosenLanguage: widget.chosenLanguage,
+            notifyParent: () {
+              widget.notifyParent();
+            },
+          ),
         ),
       ],
     );

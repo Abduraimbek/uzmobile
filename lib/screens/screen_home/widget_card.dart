@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/constants.dart';
-import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/screen_all_page/screen_all_page.dart';
@@ -9,6 +8,15 @@ import 'package:uzmobile/screens/screen_all_page/screen_all_page.dart';
 import 'widget_card_item.dart';
 
 class WidgetCard extends StatefulWidget {
+  final int chosenLanguage;
+  final Function() notifyParent;
+
+  const WidgetCard({
+    Key key,
+    @required this.chosenLanguage,
+    @required this.notifyParent,
+  }) : super(key: key);
+
   @override
   _WidgetCardState createState() => _WidgetCardState();
 }
@@ -16,8 +24,11 @@ class WidgetCard extends StatefulWidget {
 class _WidgetCardState extends State<WidgetCard> {
   int _index = 0;
 
+  // int chosenLanguage;
+
   @override
   Widget build(BuildContext context) {
+    // chosenLanguage = SharedPrefHelper.chosenLanguage;
     return Padding(
       padding: EdgeInsets.only(
         left: 3 * SizeConfig.safeBlockHorizontal,
@@ -98,41 +109,53 @@ class _WidgetCardState extends State<WidgetCard> {
             children: <Widget>[
               WidgetCardItem(
                 iconData: FlutterIcons.hash_fea,
-                title: AllStrings.uSSD[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.uSSD[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.uSSD[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.uSSD,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.credit_card_fea,
-                title: AllStrings.tariflar[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.tariflar[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.tariflar[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.tariflar,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.library_add_mdi,
-                title: AllStrings.xizmatlar[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.xizmatlar[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.xizmatlar[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.xizmatlar,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
             ],
@@ -144,41 +167,53 @@ class _WidgetCardState extends State<WidgetCard> {
             children: <Widget>[
               WidgetCardItem(
                 iconData: FlutterIcons.phone_fea,
-                title: AllStrings.daqiqa[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.daqiqa[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.daqiqa[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.daqiqa,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.ios_globe_ion,
-                title: AllStrings.internet[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.internet[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.internet[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.internet,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.sms_mdi,
-                title: AllStrings.sms[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.sms[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.sms[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.sms,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
             ],
@@ -197,41 +232,53 @@ class _WidgetCardState extends State<WidgetCard> {
             children: <Widget>[
               WidgetCardItem(
                 iconData: FlutterIcons.sim_card_faw5s,
-                title: AllStrings.kategoriya1[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.kategoriya1[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.kategoriya1[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.kategoriya1,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.sim_card_faw5s,
-                title: AllStrings.kategoriya2[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.kategoriya2[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.kategoriya2[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.kategoriya2,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.sim_card_faw5s,
-                title: AllStrings.kategoriya3[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.kategoriya3[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.kategoriya3[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.kategoriya3,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
             ],
@@ -243,41 +290,53 @@ class _WidgetCardState extends State<WidgetCard> {
             children: <Widget>[
               WidgetCardItem(
                 iconData: FlutterIcons.sim_card_faw5s,
-                title: AllStrings.kategoriya4[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.kategoriya4[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.kategoriya4[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.kategoriya4,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.sim_card_faw5s,
-                title: AllStrings.kategoriya5[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.kategoriya5[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.kategoriya5[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.kategoriya5,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
               WidgetCardItem(
                 iconData: FlutterIcons.sim_card_faw5s,
-                title: AllStrings.kategoriya6[SharedPrefHelper.chosenLanguage],
-                onPress: () {
-                  Navigator.pushNamed(
+                title: AllStrings.kategoriya6[widget.chosenLanguage],
+                onPress: () async {
+                  await Navigator.pushNamed(
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      AllStrings.kategoriya6[SharedPrefHelper.chosenLanguage],
+                      appBarTitle: AllStrings.kategoriya6,
+                      chosenLanguage: widget.chosenLanguage,
                     ),
                   );
+                  setState(() {
+                    widget.notifyParent();
+                  });
                 },
               ),
             ],

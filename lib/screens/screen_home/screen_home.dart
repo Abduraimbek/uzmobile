@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
+import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
 import 'package:uzmobile/widgets/drawer.dart';
 
@@ -18,15 +19,11 @@ class ScreenHome extends StatefulWidget {
 
 class _ScreenHomeState extends State<ScreenHome> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    SharedPrefHelper.getLanguage();
-  }
+  int chosenLanguage;
 
   @override
   Widget build(BuildContext context) {
+    chosenLanguage = SharedPrefHelper.chosenLanguage;
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -73,7 +70,7 @@ class _ScreenHomeState extends State<ScreenHome> {
         ],
       ),
       drawer: Drawer(
-        child: CustomDrawer(),
+        child: Container(), //CustomDrawer(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -85,8 +82,25 @@ class _ScreenHomeState extends State<ScreenHome> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(),
-      body: Body(),
+      bottomNavigationBar: BottomBar(
+        onPressSettings: () async {
+          await Navigator.pushNamed(
+            context,
+            SettingsLanguageScreen.routeName,
+          );
+          setState(() {
+            chosenLanguage = SharedPrefHelper.chosenLanguage;
+          });
+        },
+      ),
+      body: Body(
+        chosenLanguage: chosenLanguage,
+        notifyParent: () {
+          setState(() {
+            chosenLanguage = SharedPrefHelper.chosenLanguage;
+          });
+        },
+      ),
     );
   }
 }

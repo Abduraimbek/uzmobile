@@ -5,12 +5,18 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/constants/strings.dart';
-import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
 
 import 'package:intent/intent.dart' as android_intent;
 import 'package:intent/action.dart' as android_action;
 
 class BottomBar extends StatelessWidget {
+  final Function onPressSettings;
+
+  const BottomBar({
+    Key key,
+    @required this.onPressSettings,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -92,12 +98,13 @@ class BottomBar extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        SettingsLanguageScreen.routeName,
-                      );
-                    },
+                    onTap: onPressSettings,
+                    // onTap: () {
+                    //   Navigator.pushNamed(
+                    //     context,
+                    //     SettingsLanguageScreen.routeName,
+                    //   );
+                    // },
                     child: Container(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
