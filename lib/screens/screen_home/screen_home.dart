@@ -70,7 +70,13 @@ class _ScreenHomeState extends State<ScreenHome> {
         ],
       ),
       drawer: Drawer(
-        child: Container(), //CustomDrawer(),
+        child: CustomDrawer(
+          onResult: () {
+            setState(() {
+              chosenLanguage = SharedPrefHelper.chosenLanguage;
+            });
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
