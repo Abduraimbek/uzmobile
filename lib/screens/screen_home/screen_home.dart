@@ -4,8 +4,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
+import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
+import 'package:uzmobile/widgets/custom_alert_dialog.dart';
 import 'package:uzmobile/widgets/drawer.dart';
 
 import 'body.dart';
@@ -45,8 +47,22 @@ class _ScreenHomeState extends State<ScreenHome> {
         actions: [
           InkWell(
             onTap: () {
-              launch(
-                "https://telegram.me/abduraimbek",
+              showDialog(
+                context: context,
+                builder: (_) => CustomAlertDialog(
+                  title: AllStrings.telegramAlertDialog[chosenLanguage],
+                  noButtonText: AllStrings.yuq[chosenLanguage],
+                  yesButtonText: AllStrings.ha[chosenLanguage],
+                  noButton: () {
+                    Navigator.pop(context);
+                  },
+                  yesButton: () {
+                    launch(
+                      "https://telegram.me/abduraimbek",
+                    );
+                    Navigator.pop(context);
+                  },
+                ),
               );
             },
             child: Icon(

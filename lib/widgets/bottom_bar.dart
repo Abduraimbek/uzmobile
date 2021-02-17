@@ -8,6 +8,7 @@ import 'package:uzmobile/constants/strings.dart';
 
 import 'package:intent/intent.dart' as android_intent;
 import 'package:intent/action.dart' as android_action;
+import 'package:uzmobile/widgets/custom_alert_dialog.dart';
 
 class BottomBar extends StatelessWidget {
   final Function onPressSettings;
@@ -45,7 +46,16 @@ class BottomBar extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      _launchURL("+998888334240", context);
+                      _launchURL(
+                        uSSDCode: "+998944104240",
+                        context: context,
+                        dialogTitle: AllStrings.operatorAlertDialog[
+                            SharedPrefHelper.chosenLanguage],
+                        noButtonText:
+                            AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+                        yesButtonText:
+                            AllStrings.ha[SharedPrefHelper.chosenLanguage],
+                      );
                     },
                     child: Container(
                       child: Padding(
@@ -60,7 +70,16 @@ class BottomBar extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      _launchURL("*100#", context);
+                      _launchURL(
+                        uSSDCode: "*100#",
+                        context: context,
+                        dialogTitle: AllStrings.balanceAlertDialog[
+                            SharedPrefHelper.chosenLanguage],
+                        noButtonText:
+                            AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+                        yesButtonText: AllStrings
+                            .aktivlashtirish[SharedPrefHelper.chosenLanguage],
+                      );
                     },
                     child: Container(
                       child: Padding(
@@ -84,7 +103,16 @@ class BottomBar extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      _launchURL("*103#", context);
+                      _launchURL(
+                        uSSDCode: "*103#",
+                        context: context,
+                        dialogTitle: AllStrings
+                            .mbAlertDialog[SharedPrefHelper.chosenLanguage],
+                        noButtonText:
+                            AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+                        yesButtonText: AllStrings
+                            .aktivlashtirish[SharedPrefHelper.chosenLanguage],
+                      );
                     },
                     child: Container(
                       child: Padding(
@@ -126,14 +154,34 @@ class BottomBar extends StatelessWidget {
   }
 }
 
-_launchURL(String uSSDCode, context) async {
+_launchURL({
+  String uSSDCode,
+  context,
+  String dialogTitle,
+  String noButtonText,
+  String yesButtonText,
+}) async {
   // Replace 12345678 with your tel. no.
 
   if (await Permission.phone.request().isGranted) {
-    android_intent.Intent()
-      ..setAction(android_action.Action.ACTION_CALL)
-      ..setData(Uri(scheme: "tel", path: uSSDCode))
-      ..startActivity().catchError((e) => print(e));
+    showDialog(
+      context: context,
+      builder: (_) => CustomAlertDialog(
+        title: dialogTitle,
+        noButtonText: noButtonText,
+        yesButtonText: yesButtonText,
+        noButton: () {
+          Navigator.pop(context);
+        },
+        yesButton: () {
+          android_intent.Intent()
+            ..setAction(android_action.Action.ACTION_CALL)
+            ..setData(Uri(scheme: "tel", path: uSSDCode))
+            ..startActivity().catchError((e) => print(e));
+          Navigator.pop(context);
+        },
+      ),
+    );
   } else {
     showDialog(
       context: context,

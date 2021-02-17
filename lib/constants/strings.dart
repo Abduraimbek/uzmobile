@@ -90,4 +90,46 @@ class AllStrings {
     "Категория 6",
     "Category 6",
   ];
+
+  static List<String> telegramAlertDialog = [
+    "Telegram kanalga o'tmoqchimisiz?",
+    "Хотите перейти на телеграм-канал?",
+    "Do you want to go to telegram channel?",
+  ];
+
+  static List<String> ha = [
+    "Ha",
+    "Да",
+    "Yes",
+  ];
+
+  static List<String> yuq = [
+    "Yo'q",
+    "Нет",
+    "No",
+  ];
+
+  static List<String> aktivlashtirish = [
+    "Aktivlashtirish",
+    "Активация",
+    "Activation",
+  ];
+
+  static List<String> operatorAlertDialog = [
+    "Operatorga qo'ng'iroq qilish",
+    "Позвонить оператору",
+    "Call the operator",
+  ];
+
+  static List<String> balanceAlertDialog = [
+    "Balansni tekshirish",
+    "Проверка баланса",
+    "Balance check",
+  ];
+
+  static List<String> mbAlertDialog = [
+    "Internet qoldig'ini tekshirish",
+    "Проверить баланс МБ",
+    "Check MB balance",
+  ];
 }
