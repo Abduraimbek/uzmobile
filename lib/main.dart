@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       // systemNavigationBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark,
       // statusBarColor: Colors.pink, // status bar color
+      // statusBarColor: Colors.pink, // status bar color
     ));
     return MaterialApp(
       title: 'uzmobile',
