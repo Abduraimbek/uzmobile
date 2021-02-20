@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
+import 'package:uzmobile/firebase_arguments.dart';
 import 'package:uzmobile/screens/screen_home/screen_home.dart';
 import 'package:uzmobile/screens/screen_language_choose/ScreenLanguageChoose.dart';
 
@@ -37,6 +38,7 @@ class _ScreenFirstScreenState extends State<ScreenFirstScreen>
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    FirebaseInitialize().initializeFirebase();
     SharedPrefHelper.getLanguage();
     return Scaffold(
       backgroundColor: Colors.white,

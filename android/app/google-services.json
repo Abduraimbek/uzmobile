@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1087274318748",
+    "firebase_url": "https://uzmobile2-default-rtdb.firebaseio.com",
+    "project_id": "uzmobile2",
+    "storage_bucket": "uzmobile2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087274318748:android:1d82ca6fa9201c6a062659",
+        "android_client_info": {
+          "package_name": "abduraimbek.testing_uzmobile_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087274318748-jlk58rvlb4imjia1l21k93kfij3t69sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnXlRv3kCs9tQRZkrtGvgO5sZ-TqxArmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087274318748-jlk58rvlb4imjia1l21k93kfij3t69sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087274318748:android:8ba7b2eefe82b576062659",
+        "android_client_info": {
+          "package_name": "abduraimbek.uzmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087274318748-jlk58rvlb4imjia1l21k93kfij3t69sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnXlRv3kCs9tQRZkrtGvgO5sZ-TqxArmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087274318748-jlk58rvlb4imjia1l21k93kfij3t69sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

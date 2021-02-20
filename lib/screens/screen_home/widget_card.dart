@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/firebase_helper.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/screen_all_page/screen_all_page.dart';
@@ -115,8 +116,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.uSSD,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.ussd,
                     ),
                   );
                   setState(() {
@@ -132,8 +132,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.tariflar,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.tariff,
                     ),
                   );
                   setState(() {
@@ -149,8 +148,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.xizmatlar,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.service,
                     ),
                   );
                   setState(() {
@@ -173,8 +171,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.daqiqa,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.daqiqa,
                     ),
                   );
                   setState(() {
@@ -190,8 +187,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.internet,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.internet,
                     ),
                   );
                   setState(() {
@@ -207,8 +203,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.sms,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms,
                     ),
                   );
                   setState(() {
@@ -238,8 +233,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.kategoriya1,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms, // todo
                     ),
                   );
                   setState(() {
@@ -255,8 +249,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.kategoriya2,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms, // todo
                     ),
                   );
                   setState(() {
@@ -272,8 +265,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.kategoriya3,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms, // todo
                     ),
                   );
                   setState(() {
@@ -296,8 +288,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.kategoriya4,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms, // todo
                     ),
                   );
                   setState(() {
@@ -313,8 +304,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.kategoriya5,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms, // todo
                     ),
                   );
                   setState(() {
@@ -330,8 +320,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      appBarTitle: AllStrings.kategoriya6,
-                      chosenLanguage: widget.chosenLanguage,
+                      firebaseTable: FirebaseTables.sms, // todo
                     ),
                   );
                   setState(() {

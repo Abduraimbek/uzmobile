@@ -44,7 +44,7 @@ class CustomAlertDialog extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: SizeConfig.safeBlockHorizontal * 15,
+                horizontal: SizeConfig.safeBlockHorizontal * 5,
                 vertical: SizeConfig.safeBlockVertical * 1.5,
               ),
               child: Text(

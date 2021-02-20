@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/firebase_helper.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/constants/strings.dart';
@@ -38,8 +39,7 @@ class CustomDrawer extends StatelessWidget {
                           context,
                           AllPageScreen.routeName,
                           arguments: AllPageScreenArguments(
-                            appBarTitle: AllStrings.uSSD,
-                            chosenLanguage: SharedPrefHelper.chosenLanguage,
+                            firebaseTable: FirebaseTables.ussd,
                           ),
                         );
                         onResult();
@@ -55,8 +55,7 @@ class CustomDrawer extends StatelessWidget {
                           context,
                           AllPageScreen.routeName,
                           arguments: AllPageScreenArguments(
-                            appBarTitle: AllStrings.tariflar,
-                            chosenLanguage: SharedPrefHelper.chosenLanguage,
+                            firebaseTable: FirebaseTables.tariff,
                           ),
                         );
                         onResult();
@@ -72,8 +71,7 @@ class CustomDrawer extends StatelessWidget {
                           context,
                           AllPageScreen.routeName,
                           arguments: AllPageScreenArguments(
-                            appBarTitle: AllStrings.xizmatlar,
-                            chosenLanguage: SharedPrefHelper.chosenLanguage,
+                            firebaseTable: FirebaseTables.service,
                           ),
                         );
                         onResult();
@@ -88,8 +86,7 @@ class CustomDrawer extends StatelessWidget {
                           context,
                           AllPageScreen.routeName,
                           arguments: AllPageScreenArguments(
-                            appBarTitle: AllStrings.daqiqa,
-                            chosenLanguage: SharedPrefHelper.chosenLanguage,
+                            firebaseTable: FirebaseTables.daqiqa,
                           ),
                         );
                         onResult();
@@ -105,8 +102,7 @@ class CustomDrawer extends StatelessWidget {
                           context,
                           AllPageScreen.routeName,
                           arguments: AllPageScreenArguments(
-                            appBarTitle: AllStrings.internet,
-                            chosenLanguage: SharedPrefHelper.chosenLanguage,
+                            firebaseTable: FirebaseTables.internet,
                           ),
                         );
                         onResult();
@@ -121,8 +117,7 @@ class CustomDrawer extends StatelessWidget {
                           context,
                           AllPageScreen.routeName,
                           arguments: AllPageScreenArguments(
-                            appBarTitle: AllStrings.sms,
-                            chosenLanguage: SharedPrefHelper.chosenLanguage,
+                            firebaseTable: FirebaseTables.sms,
                           ),
                         );
                         onResult();
