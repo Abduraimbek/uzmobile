@@ -4,6 +4,7 @@ import 'package:uzmobile/constants/routes.dart';
 import 'package:uzmobile/screens/screen_first_screen/screen_first_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
