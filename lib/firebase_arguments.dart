@@ -12,8 +12,7 @@ class FirebaseInitialize {
       name: 'uzmobile',
       options: Platform.isIOS
           ? FirebaseOptions(
-              appId:
-                  '1:1087274318748:ios:2591339e5ff46699062659',
+              appId: '1:1087274318748:ios:2591339e5ff46699062659',
               apiKey: 'AIzaSyCuHHnzYZ2e0egWx28grok87LAjZjPxluA',
               projectId: 'uzmobile2',
               messagingSenderId: 'uzmobile2__app',
