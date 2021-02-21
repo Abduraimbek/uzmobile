@@ -59,15 +59,17 @@ TextStyle textStyleUnSpotted = TextStyle(
 );
 
 void launchUrl({
-  String ussdCode,
-  context,
-  String dialogTitle,
+  @required String ussdCode,
+  @required context,
+  @required String dialogTitle,
+  String text,
 }) async {
   if (await Permission.phone.request().isGranted) {
     showDialog(
       context: context,
       builder: (_) => CustomAlertDialog(
         title: dialogTitle,
+        text: text != null ? text : null,
         noButtonText: AllStrings.yuq[SharedPrefHelper.chosenLanguage],
         yesButtonText:
             AllStrings.aktivlashtirish[SharedPrefHelper.chosenLanguage],

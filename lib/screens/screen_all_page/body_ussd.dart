@@ -4,6 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/datas/ussd.dart';
@@ -73,65 +74,74 @@ class _BodyUSSDState extends State<BodyUSSD> {
       onTap: () => launchUrl(
         context: context,
         ussdCode: code,
-        dialogTitle: text,
+        dialogTitle: code,
+        text: text,
       ),
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 4 * SizeConfig.safeBlockHorizontal,
-          right: 4 * SizeConfig.safeBlockHorizontal,
-          bottom: 1.5 * SizeConfig.safeBlockVertical,
-          top: 1.5 * SizeConfig.safeBlockVertical,
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            color: kMainBlueColorWithOpacity,
-            borderRadius: BorderRadius.circular(
-              4 * SizeConfig.safeBlockHorizontal,
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 3,
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      code,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 4 * SizeConfig.safeBlockHorizontal,
-                      ),
-                    ),
-                  ),
-                  height: 10 * SizeConfig.safeBlockVertical,
-                  decoration: BoxDecoration(
-                    color: kMainBlueColor,
-                    borderRadius: BorderRadius.circular(
-                      4 * SizeConfig.safeBlockHorizontal,
-                    ),
+      child: ussdCard(
+        code,
+        text,
+      ),
+    );
+  }
+
+  Widget ussdCard(
+    String code,
+    String text,
+  ) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: 1.25 * SizeConfig.safeBlockVertical,
+        top: 1.25 * SizeConfig.safeBlockVertical,
+        left: 2.5 * SizeConfig.safeBlockHorizontal,
+        right: 2.5 * SizeConfig.safeBlockHorizontal,
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+              height: 10 * SizeConfig.safeBlockVertical,
+              decoration: boxDecoration,
+              child: Center(
+                child: Text(
+                  code,
+                  style: TextStyle(
+                    color: kBottomBarColor,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 3.4 * SizeConfig.safeBlockHorizontal,
                   ),
                 ),
               ),
-              Expanded(
-                flex: 5,
+            ),
+          ),
+          SizedBox(width: 3 * SizeConfig.safeBlockHorizontal),
+          Expanded(
+            flex: 7,
+            child: Container(
+              height: 10 * SizeConfig.safeBlockVertical,
+              decoration: boxDecoration,
+              child: Align(
+                alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    left: 3 * SizeConfig.safeBlockHorizontal,
+                    left: 2 * SizeConfig.safeBlockHorizontal,
+                    right: 2 * SizeConfig.safeBlockHorizontal,
                   ),
                   child: Text(
                     text,
+                    textAlign: TextAlign.start,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: kBottomBarColor,
+                      fontSize: 3.2 * SizeConfig.safeBlockHorizontal,
                       fontWeight: FontWeight.bold,
-                      fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
                     ),
                   ),
                 ),
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

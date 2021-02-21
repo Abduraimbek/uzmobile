@@ -19,11 +19,12 @@ class FirebaseInitialize {
               databaseURL: 'https://uzmobile2-default-rtdb.firebaseio.com/',
             )
           : FirebaseOptions(
-              appId: "1:1087274318748:android:1d82ca6fa9201c6a062659",
-              apiKey: "AIzaSyBnXlRv3kCs9tQRZkrtGvgO5sZ-TqxArmY",
+              appId: "1:701139912025:android:70af370bcaf772be62f848",
+              apiKey: "AIzaSyDuvdapl1-NFxw0QWVIGyl1Z1CazElNIuE",
               messagingSenderId: 'uzmobile2__app',
-              projectId: "uzmobile2",
-              databaseURL: "https://uzmobile2-default-rtdb.firebaseio.com/",
+              projectId: "uzmobile2-f04e7",
+              databaseURL:
+                  "https://uzmobile2-f04e7-default-rtdb.firebaseio.com/",
             ),
     );
     database = FirebaseDatabase(app: app);

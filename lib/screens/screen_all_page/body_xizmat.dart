@@ -93,31 +93,68 @@ class _BodyXizmatState extends State<BodyXizmat> {
           ),
         );
       },
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 4 * SizeConfig.safeBlockHorizontal,
-          right: 4 * SizeConfig.safeBlockHorizontal,
-          bottom: 1.5 * SizeConfig.safeBlockVertical,
-          top: 1.5 * SizeConfig.safeBlockVertical,
-        ),
-        child: Container(
-          height: 10 * SizeConfig.safeBlockVertical,
-          decoration: BoxDecoration(
-            color: kMainBlueColor,
-            borderRadius: BorderRadius.circular(
-              4 * SizeConfig.safeBlockHorizontal,
-            ),
+      child: cardXizmat(
+        title,
+        body,
+      ),
+    );
+  }
+
+  Widget cardXizmat(
+    String title,
+    String body,
+  ) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: 1.25 * SizeConfig.safeBlockVertical,
+        top: 1.25 * SizeConfig.safeBlockVertical,
+        left: 2.5 * SizeConfig.safeBlockHorizontal,
+        right: 2.5 * SizeConfig.safeBlockHorizontal,
+      ),
+      child: Container(
+        height: 15 * SizeConfig.safeBlockVertical,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            4 * SizeConfig.safeBlockHorizontal,
           ),
-          child: Center(
-            child: Text(
-              title,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 4 * SizeConfig.safeBlockHorizontal,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, 0.1),
+              blurRadius: 1.5 * SizeConfig.safeBlockHorizontal,
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 0.8 * SizeConfig.safeBlockVertical),
+            Center(
+              child: Text(
+                title,
+                style: TextStyle(
+                  color: kBottomBarColor,
+                  fontSize: 4 * SizeConfig.safeBlockHorizontal,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
+            SizedBox(height: 1.3 * SizeConfig.safeBlockVertical),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 4 * SizeConfig.safeBlockHorizontal,
+              ),
+              child: Text(
+                body,
+                maxLines: 3,
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

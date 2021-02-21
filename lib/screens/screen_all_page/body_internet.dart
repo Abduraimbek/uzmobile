@@ -134,7 +134,7 @@ class _BodyInternetState extends State<BodyInternet> {
                           : decorationUnSpotted,
                       child: Center(
                         child: Text(
-                          "Non Stop",
+                          "Non-Stop",
                           style: _currentPage == 2
                               ? textStyleSpotted
                               : textStyleUnSpotted,
@@ -198,6 +198,7 @@ class _BodyInternetState extends State<BodyInternet> {
           money: _internetKunlik.money,
           code: _internetKunlik.code,
           mb: _internetKunlik.mb,
+          checkOneDay: true,
         );
       },
     );
@@ -220,6 +221,7 @@ class _BodyInternetState extends State<BodyInternet> {
           money: _internetOylik.money,
           code: _internetOylik.code,
           mb: _internetOylik.mb,
+          checkOneDay: false,
         );
       },
     );
@@ -242,6 +244,7 @@ class _BodyInternetState extends State<BodyInternet> {
           money: _internetNonStop.money,
           code: _internetNonStop.code,
           mb: _internetNonStop.mb,
+          checkOneDay: false,
         );
       },
     );
@@ -252,17 +255,20 @@ class _BodyInternetState extends State<BodyInternet> {
     String money,
     String code,
     String mb,
+    bool checkOneDay,
   }) {
     return InkWell(
       onTap: () => launchUrl(
         context: context,
         ussdCode: code,
-        dialogTitle: money,
+        dialogTitle: mb,
+        text:
+            "$money\n${AllStrings.berilganTrafikHajmi[SharedPrefHelper.chosenLanguage]}$mb\n${checkOneDay ? AllStrings.amal1[SharedPrefHelper.chosenLanguage] : AllStrings.amal30[SharedPrefHelper.chosenLanguage]}",
       ),
       child: Padding(
         padding: EdgeInsets.only(
-          left: 4 * SizeConfig.safeBlockHorizontal,
-          right: 4 * SizeConfig.safeBlockHorizontal,
+          left: 2.5 * SizeConfig.safeBlockHorizontal,
+          right: 2.5 * SizeConfig.safeBlockHorizontal,
           bottom: 1.5 * SizeConfig.safeBlockVertical,
           top: 1.5 * SizeConfig.safeBlockVertical,
         ),
@@ -285,7 +291,7 @@ class _BodyInternetState extends State<BodyInternet> {
                 decoration: boxDecoration,
               ),
             ),
-            SizedBox(width: 5 * SizeConfig.safeBlockHorizontal),
+            SizedBox(width: 3.5 * SizeConfig.safeBlockHorizontal),
             Expanded(
               flex: 7,
               child: Container(
@@ -294,7 +300,7 @@ class _BodyInternetState extends State<BodyInternet> {
                 child: Padding(
                   padding: EdgeInsets.only(
                     top: 2 * SizeConfig.safeBlockVertical,
-                    left: 4 * SizeConfig.safeBlockHorizontal,
+                    left: 3 * SizeConfig.safeBlockHorizontal,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -305,6 +311,14 @@ class _BodyInternetState extends State<BodyInternet> {
                           color: kBottomBarColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
+                        ),
+                      ),
+                      SizedBox(height: 0.5 * SizeConfig.safeBlockVertical),
+                      Text(
+                        "$money\n${AllStrings.berilganTrafikHajmi[SharedPrefHelper.chosenLanguage]}$mb\n${checkOneDay ? AllStrings.amal1[SharedPrefHelper.chosenLanguage] : AllStrings.amal30[SharedPrefHelper.chosenLanguage]}",
+                        style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 3.35 * SizeConfig.safeBlockHorizontal,
                         ),
                       ),
                     ],

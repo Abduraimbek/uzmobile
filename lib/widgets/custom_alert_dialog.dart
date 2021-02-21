@@ -8,6 +8,7 @@ class CustomAlertDialog extends StatelessWidget {
   final Function noButton;
   final String noButtonText;
   final String title;
+  final String text;
 
   const CustomAlertDialog({
     Key key,
@@ -16,6 +17,7 @@ class CustomAlertDialog extends StatelessWidget {
     @required this.title,
     @required this.yesButtonText,
     @required this.noButtonText,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -25,6 +27,7 @@ class CustomAlertDialog extends StatelessWidget {
         title,
         textAlign: TextAlign.center,
       ),
+      content: text != null ? Text(text) : null,
       actions: [
         FlatButton(
           onPressed: noButton,

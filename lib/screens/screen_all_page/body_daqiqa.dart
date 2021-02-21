@@ -2,7 +2,9 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
+import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/datas/daqiqa.dart';
 
 class BodyDaqiqa extends StatefulWidget {
@@ -72,64 +74,73 @@ class _BodyDaqiqaState extends State<BodyDaqiqa> {
       onTap: () => launchUrl(
         context: context,
         ussdCode: code,
-        dialogTitle: money,
+        dialogTitle:
+            "$time ${AllStrings.daqiqa[SharedPrefHelper.chosenLanguage]}",
+        text:
+            "$money\n${AllStrings.berilganDaqiqaHajmi[SharedPrefHelper.chosenLanguage]}$time\n${AllStrings.amal30[SharedPrefHelper.chosenLanguage]}",
       ),
       child: Padding(
         padding: EdgeInsets.only(
-          left: 4 * SizeConfig.safeBlockHorizontal,
-          right: 4 * SizeConfig.safeBlockHorizontal,
+          left: 2.5 * SizeConfig.safeBlockHorizontal,
+          right: 2.5 * SizeConfig.safeBlockHorizontal,
           bottom: 1.5 * SizeConfig.safeBlockVertical,
           top: 1.5 * SizeConfig.safeBlockVertical,
         ),
-        child: Container(
-          decoration: BoxDecoration(
-            color: kMainBlueColorWithOpacity,
-            borderRadius: BorderRadius.circular(
-              4 * SizeConfig.safeBlockHorizontal,
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 3,
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      time.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 4 * SizeConfig.safeBlockHorizontal,
-                      ),
-                    ),
-                  ),
-                  height: 10 * SizeConfig.safeBlockVertical,
-                  decoration: BoxDecoration(
-                    color: kMainBlueColor,
-                    borderRadius: BorderRadius.circular(
-                      4 * SizeConfig.safeBlockHorizontal,
+        child: Row(
+          children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                child: Center(
+                  child: Text(
+                    time.toString(),
+                    style: TextStyle(
+                      color: kBottomBarColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 4 * SizeConfig.safeBlockHorizontal,
                     ),
                   ),
                 ),
+                height: 16 * SizeConfig.safeBlockVertical,
+                decoration: boxDecoration,
               ),
-              Expanded(
-                flex: 5,
+            ),
+            SizedBox(width: 3.5 * SizeConfig.safeBlockHorizontal),
+            Expanded(
+              flex: 7,
+              child: Container(
+                height: 16 * SizeConfig.safeBlockVertical,
+                decoration: boxDecoration,
                 child: Padding(
                   padding: EdgeInsets.only(
+                    top: 2 * SizeConfig.safeBlockVertical,
                     left: 3 * SizeConfig.safeBlockHorizontal,
                   ),
-                  child: Text(
-                    money,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "$time ${AllStrings.daqiqa[SharedPrefHelper.chosenLanguage]}",
+                        style: TextStyle(
+                          color: kBottomBarColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
+                        ),
+                      ),
+                      SizedBox(height: 0.5 * SizeConfig.safeBlockVertical),
+                      Text(
+                        "$money\n${AllStrings.berilganDaqiqaHajmi[SharedPrefHelper.chosenLanguage]}$time\n${AllStrings.amal30[SharedPrefHelper.chosenLanguage]}",
+                        style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 3.35 * SizeConfig.safeBlockHorizontal,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

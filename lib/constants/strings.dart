@@ -151,4 +151,28 @@ class AllStrings {
     "Дневная",
     "Daily",
   ];
+
+  static const List<String> amal1 = [
+    "Amal qilish muddati 1 kun",
+    "Срок действия 1 день",
+    "Validity period is 1 day",
+  ];
+
+  static const List<String> amal30 = [
+    "Amal qilish muddati 30 kun",
+    "Срок действия 30 дней",
+    "Validity period is 30 days",
+  ];
+
+  static const List<String> berilganTrafikHajmi = [
+    "Berilgan trafik hajmi ",
+    "Учитывая объем трафика ",
+    "Given traffic volume ",
+  ];
+
+  static const List<String> berilganDaqiqaHajmi = [
+    "Berilgan daqiqa hajmi ",
+    "Размер данной минуты ",
+    "The size of a given minute ",
+  ];
 }
