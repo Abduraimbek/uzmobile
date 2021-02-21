@@ -293,15 +293,16 @@ class _BodyInternetState extends State<BodyInternet> {
                 decoration: boxDecoration,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: 4 * SizeConfig.safeBlockHorizontal,
+                    top: 2 * SizeConfig.safeBlockVertical,
+                    left: 4 * SizeConfig.safeBlockHorizontal,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        money,
+                        mb,
                         style: TextStyle(
-                          color: kMainBlueColor,
+                          color: kBottomBarColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
                         ),
