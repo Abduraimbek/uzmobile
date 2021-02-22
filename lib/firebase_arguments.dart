@@ -34,7 +34,7 @@ class FirebaseInitialize {
     await database.setPersistenceCacheSizeBytes(2000000);
     var dbRef = database.reference().child("AppStoreLink");
     dbRef.once().then((DataSnapshot snapshot) {
-      playMarketLink = Map<dynamic, dynamic>.from(snapshot.value);
+      appStoreLink = Map<dynamic, dynamic>.from(snapshot.value);
     });
     var dbRef2 = database.reference().child("PlayMarketLink");
     dbRef2.once().then((DataSnapshot snapshot) {
