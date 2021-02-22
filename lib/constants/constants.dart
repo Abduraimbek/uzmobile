@@ -1,5 +1,9 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
 import 'package:uzmobile/constants/strings.dart';
@@ -10,14 +14,11 @@ import 'package:uzmobile/widgets/custom_alert_dialog.dart';
 
 const Color kMainBlueColor = Color(0xff00b4ff);
 
-Color kMainBlueColorWithOpacity = Color(0xff00b4ff).withOpacity(0.1);
-
 const Color kCardIconBackColor = Color(0xffccf0ff);
+
 const Color kBottomBarColor = Color(0xff228bd6);
 
 const Color kOrange = Color(0xffffd12d);
-
-const kTextColor = Color(0xFF757575);
 
 BoxDecoration decorationSpotted = BoxDecoration(
   borderRadius: BorderRadius.circular(
@@ -64,41 +65,75 @@ void launchUrl({
   @required String dialogTitle,
   String text,
 }) async {
-  if (await Permission.phone.request().isGranted) {
-    showDialog(
-      context: context,
-      builder: (_) => CustomAlertDialog(
-        title: dialogTitle,
-        text: text != null ? text : null,
-        noButtonText: AllStrings.yuq[SharedPrefHelper.chosenLanguage],
-        yesButtonText:
-            AllStrings.aktivlashtirish[SharedPrefHelper.chosenLanguage],
-        noButton: () {
-          Navigator.pop(context);
-        },
-        yesButton: () {
-          android_intent.Intent()
-            ..setAction(android_action.Action.ACTION_CALL)
-            ..setData(Uri(scheme: "tel", path: ussdCode))
-            ..startActivity().catchError((e) => print(e));
-          Navigator.pop(context);
-        },
-      ),
-    );
+  if (Platform.isAndroid) {
+    if (await Permission.phone.request().isGranted) {
+      showDialog(
+        context: context,
+        builder: (_) => CustomAlertDialog(
+          title: dialogTitle,
+          text: text != null ? text : null,
+          noButtonText: AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+          yesButtonText:
+              AllStrings.aktivlashtirish[SharedPrefHelper.chosenLanguage],
+          noButton: () {
+            Navigator.pop(context);
+          },
+          yesButton: () {
+            android_intent.Intent()
+              ..setAction(android_action.Action.ACTION_CALL)
+              ..setData(Uri(scheme: "tel", path: ussdCode))
+              ..startActivity().catchError((e) => print(e));
+            Navigator.pop(context);
+          },
+        ),
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text(
+            AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
+            textAlign: TextAlign.center,
+          ),
+          content: Icon(
+            Icons.error_outline,
+            color: Colors.red,
+            size: 20 * SizeConfig.safeBlockHorizontal,
+          ),
+        ),
+      );
+    }
   } else {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: Text(
-          AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
-          textAlign: TextAlign.center,
+    if (await Permission.phone.request().isGranted) {
+      showDialog(
+        context: context,
+        builder: (_) => CustomAlertDialog(
+          yesButton: () {
+            launch("tel:$ussdCode");
+          },
+          noButton: () {
+            Navigator.pop(context);
+          },
+          title: dialogTitle,
+          noButtonText: AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+          yesButtonText:
+              AllStrings.aktivlashtirish[SharedPrefHelper.chosenLanguage],
         ),
-        content: Icon(
-          Icons.error_outline,
-          color: Colors.red,
-          size: 20 * SizeConfig.safeBlockHorizontal,
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => CupertinoAlertDialog(
+          title: Text(
+            AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
+          ),
+          content: Icon(
+            Icons.error_outline,
+            color: Colors.red,
+            size: 20 * SizeConfig.safeBlockHorizontal,
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
 }

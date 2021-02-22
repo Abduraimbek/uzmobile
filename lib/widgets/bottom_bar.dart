@@ -1,5 +1,9 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
@@ -163,39 +167,72 @@ _launchURL({
 }) async {
   // Replace 12345678 with your tel. no.
 
-  if (await Permission.phone.request().isGranted) {
-    showDialog(
-      context: context,
-      builder: (_) => CustomAlertDialog(
-        title: dialogTitle,
-        noButtonText: noButtonText,
-        yesButtonText: yesButtonText,
-        noButton: () {
-          Navigator.pop(context);
-        },
-        yesButton: () {
-          android_intent.Intent()
-            ..setAction(android_action.Action.ACTION_CALL)
-            ..setData(Uri(scheme: "tel", path: uSSDCode))
-            ..startActivity().catchError((e) => print(e));
-          Navigator.pop(context);
-        },
-      ),
-    );
+  if (Platform.isAndroid) {
+    if (await Permission.phone.request().isGranted) {
+      showDialog(
+        context: context,
+        builder: (_) => CustomAlertDialog(
+          title: dialogTitle,
+          noButtonText: noButtonText,
+          yesButtonText: yesButtonText,
+          noButton: () {
+            Navigator.pop(context);
+          },
+          yesButton: () {
+            android_intent.Intent()
+              ..setAction(android_action.Action.ACTION_CALL)
+              ..setData(Uri(scheme: "tel", path: uSSDCode))
+              ..startActivity().catchError((e) => print(e));
+            Navigator.pop(context);
+          },
+        ),
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text(
+            AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
+            textAlign: TextAlign.center,
+          ),
+          content: Icon(
+            Icons.error_outline,
+            color: Colors.red,
+            size: 20 * SizeConfig.safeBlockHorizontal,
+          ),
+        ),
+      );
+    }
   } else {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: Text(
-          AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
-          textAlign: TextAlign.center,
+    if (await Permission.phone.request().isGranted) {
+      showDialog(
+        context: context,
+        builder: (_) => CustomAlertDialog(
+          yesButton: () {
+            launch("tel:$uSSDCode");
+          },
+          noButton: () {
+            Navigator.pop(context);
+          },
+          title: dialogTitle,
+          noButtonText: noButtonText,
+          yesButtonText: yesButtonText,
         ),
-        content: Icon(
-          Icons.error_outline,
-          color: Colors.red,
-          size: 20 * SizeConfig.safeBlockHorizontal,
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => CupertinoAlertDialog(
+          title: Text(
+            AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
+          ),
+          content: Icon(
+            Icons.error_outline,
+            color: Colors.red,
+            size: 20 * SizeConfig.safeBlockHorizontal,
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
 }

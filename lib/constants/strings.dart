@@ -175,4 +175,22 @@ class AllStrings {
     "Размер данной минуты ",
     "The size of a given minute ",
   ];
+
+  static const List<String> bizBilanBoglanish = [
+    "Biz bilan bog'lanish",
+    "Связаться с нами",
+    "Contact us",
+  ];
+
+  static const List<String> qollabQuvvatlashMarkazi = [
+    "Qo'llab quvvatlash markaziga pochta orqali xabarnoma qoldirmoqchimisiz?",
+    "Хотите отправить сообщение в центр поддержки по почте?",
+    "Would you like to send a message to the support center by mail?",
+  ];
+
+  static const List<String> shareApp = [
+    "Ilovani baham ko'ring",
+    "Поделиться приложением",
+    "Share app",
+  ];
 }

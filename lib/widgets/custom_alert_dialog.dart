@@ -23,6 +23,7 @@ class CustomAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       title: Text(
         title,
         textAlign: TextAlign.center,

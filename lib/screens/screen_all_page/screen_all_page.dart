@@ -7,6 +7,7 @@ import 'package:uzmobile/constants/firebase_helper.dart';
 import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/screen_all_page/body_daqiqa.dart';
 import 'package:uzmobile/screens/screen_all_page/body_internet.dart';
+import 'package:uzmobile/screens/screen_all_page/body_tarif.dart';
 import 'package:uzmobile/screens/screen_all_page/body_xizmat.dart';
 import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
 import 'package:uzmobile/widgets/bottom_bar.dart';
@@ -79,6 +80,9 @@ class _AllPageScreenState extends State<AllPageScreen> {
         break;
       case FirebaseTables.internet:
         return BodyInternet();
+        break;
+      case FirebaseTables.tariff:
+        return BodyTarif();
         break;
       default:
         return Container(
