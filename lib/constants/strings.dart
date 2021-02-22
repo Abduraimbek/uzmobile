@@ -193,4 +193,16 @@ class AllStrings {
     "Поделиться приложением",
     "Share app",
   ];
+
+  static const List<String> berilganSMS = [
+    "Paket hajmi ",
+    "Количество ",
+    "Amount ",
+  ];
+
+  static const List<String> xalqaro = [
+    "Xalqaro",
+    "Международный",
+    "International",
+  ];
 }
