@@ -1,8 +1,7 @@
 import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/material.dart';
+
 
 class FirebaseInitialize {
   static FirebaseApp app;
@@ -15,11 +14,11 @@ class FirebaseInitialize {
       name: 'uzmobile',
       options: Platform.isIOS
           ? FirebaseOptions(
-              appId: '1:1087274318748:ios:2591339e5ff46699062659',
-              apiKey: 'AIzaSyCuHHnzYZ2e0egWx28grok87LAjZjPxluA',
-              projectId: 'uzmobile2',
+              appId: '1:701139912025:ios:903a3ccda94f83c962f848',
+              apiKey: 'AIzaSyCZzAf1sPjsVlGaozQkUtW4srgwTCoxPzY',
+              projectId: 'uzmobile2-f04e7',
               messagingSenderId: 'uzmobile2__app',
-              databaseURL: 'https://uzmobile2-default-rtdb.firebaseio.com/',
+              databaseURL: 'https://uzmobile2-f04e7-default-rtdb.firebaseio.com/',
             )
           : FirebaseOptions(
               appId: "1:701139912025:android:70af370bcaf772be62f848",

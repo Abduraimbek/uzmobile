@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1087274318748-qksrfgi03sto138khajull2p5o1tk44r.apps.googleusercontent.com</string>
+	<string>701139912025-ms7cetn8ou7td817pt0rurds8qnlc333.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1087274318748-qksrfgi03sto138khajull2p5o1tk44r</string>
+	<string>com.googleusercontent.apps.701139912025-ms7cetn8ou7td817pt0rurds8qnlc333</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCuHHnzYZ2e0egWx28grok87LAjZjPxluA</string>
+	<string>AIzaSyCZzAf1sPjsVlGaozQkUtW4srgwTCoxPzY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1087274318748</string>
+	<string>701139912025</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>abduraimbek.uzmobile</string>
 	<key>PROJECT_ID</key>
-	<string>uzmobile2</string>
+	<string>uzmobile2-f04e7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>uzmobile2.appspot.com</string>
+	<string>uzmobile2-f04e7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1087274318748:ios:2591339e5ff46699062659</string>
+	<string>1:701139912025:ios:903a3ccda94f83c962f848</string>
 	<key>DATABASE_URL</key>
-	<string>https://uzmobile2-default-rtdb.firebaseio.com</string>
+	<string>https://uzmobile2-f04e7-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
