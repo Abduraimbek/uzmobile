@@ -58,7 +58,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                   },
                   yesButton: () {
                     launch(
-                      "https://telegram.me/abduraimbek",
+                      "https://t.me/uzmobile_xizmatlari",
                     );
                     Navigator.pop(context);
                   },
@@ -74,10 +74,26 @@ class _ScreenHomeState extends State<ScreenHome> {
           SizedBox(width: 4 * SizeConfig.safeBlockHorizontal),
           InkWell(
             onTap: () {
-              // todo
+              showDialog(
+                context: context,
+                builder: (_) => CustomAlertDialog(
+                  title: AllStrings.ofisManzili[chosenLanguage],
+                  noButtonText: AllStrings.yuq[chosenLanguage],
+                  yesButtonText: AllStrings.ha[chosenLanguage],
+                  noButton: () {
+                    Navigator.pop(context);
+                  },
+                  yesButton: () {
+                    launch(
+                      "https://maps.app.goo.gl/NYxb4U3JkfdSC4H5A",
+                    );
+                    Navigator.pop(context);
+                  },
+                ),
+              );
             },
             child: Icon(
-              FlutterIcons.bell_mco,
+              Icons.location_on_outlined,
               size: 8 * SizeConfig.safeBlockHorizontal,
               color: Colors.white,
             ),

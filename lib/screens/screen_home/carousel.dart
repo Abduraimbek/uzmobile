@@ -30,7 +30,7 @@ class _CarouselState extends State<Carousel> {
             autoPlay: true,
             height: 20 * SizeConfig.safeBlockVertical,
             viewportFraction: 1,
-            autoPlayInterval: Duration(seconds: 5),
+            autoPlayInterval: Duration(seconds: 8),
             enlargeCenterPage: false,
             aspectRatio: 2.0,
             onPageChanged: (index, reason) {

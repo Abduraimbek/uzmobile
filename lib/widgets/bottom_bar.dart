@@ -51,7 +51,7 @@ class BottomBar extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       _launchURL(
-                        uSSDCode: "+998944104240",
+                        uSSDCode: "1099",
                         context: context,
                         dialogTitle: AllStrings.operatorAlertDialog[
                             SharedPrefHelper.chosenLanguage],
@@ -75,7 +75,7 @@ class BottomBar extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       _launchURL(
-                        uSSDCode: "*100#",
+                        uSSDCode: "*107#",
                         context: context,
                         dialogTitle: AllStrings.balanceAlertDialog[
                             SharedPrefHelper.chosenLanguage],
@@ -108,7 +108,7 @@ class BottomBar extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       _launchURL(
-                        uSSDCode: "*103#",
+                        uSSDCode: "*107#",
                         context: context,
                         dialogTitle: AllStrings
                             .mbAlertDialog[SharedPrefHelper.chosenLanguage],

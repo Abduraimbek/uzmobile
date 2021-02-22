@@ -93,9 +93,9 @@ class AllStrings {
   ];
 
   static const List<String> telegramAlertDialog = [
-    "Telegram kanalga o'tmoqchimisiz?",
-    "Хотите перейти на телеграм-канал?",
-    "Do you want to go to telegram channel?",
+    "Telegram guruhga o'tmoqchimisiz?",
+    "Хотите перейти на телеграм-группа?",
+    "Do you want to go to telegram group?",
   ];
 
   static const List<String> ha = [
@@ -204,5 +204,35 @@ class AllStrings {
     "Xalqaro",
     "Международный",
     "International",
+  ];
+
+  static const List<String> telegramGuruh = [
+    "Telegram guruh",
+    "Телеграм группа",
+    "Telegram group",
+  ];
+
+  static const List<String> bizHaqimizda = [
+    "Biz haqimizda",
+    "О нас",
+    "About us",
+  ];
+
+  static const List<String> bizHaqimizdaBody = [
+    "Mazkur ilova mobil operator mijozlariga qulaylik yaratish maqsadida ishlab chiqilgan bo'lib, sizning shaxsiy hisob varaqangizga va raqamingizga hech qanday zararli tomoni yo'q.",
+    "Это приложение создано для удобства клиентов мобильного оператора и не оказывает вредного воздействия на ваш личный кабинет и номер.",
+    "This application is designed for the convenience of mobile operator customers and has no harmful effects on your personal account and number.",
+  ];
+
+  static const List<String> ofisManzili = [
+    "Ofisimiz manzilini kartada ko'rish",
+    "Посмотреть адрес нашего офиса на карте",
+    "View the address of our office on the map",
+  ];
+
+  static const List<String> location = [
+    "Manzil",
+    "Место расположения",
+    "Location",
   ];
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uzmobile/constants/size_config.dart';
 
 class DrawerListItem extends StatelessWidget {
   final IconData icon;
@@ -19,7 +20,10 @@ class DrawerListItem extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(horizontal: 10),
       leading: Padding(
         padding: const EdgeInsets.only(left: 10.0),
-        child: Icon(icon),
+        child: Icon(
+          icon,
+          size: 7 * SizeConfig.safeBlockHorizontal,
+        ),
       ),
       title: Text(
         title,

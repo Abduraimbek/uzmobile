@@ -82,6 +82,97 @@ class CustomDrawer extends StatelessWidget {
                         }
                       },
                     ),
+                    DrawerListItem(
+                      icon: FlutterIcons.telegram_mco,
+                      title: AllStrings
+                          .telegramGuruh[SharedPrefHelper.chosenLanguage],
+                      onPress: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => CustomAlertDialog(
+                            title: AllStrings.telegramAlertDialog[
+                                SharedPrefHelper.chosenLanguage],
+                            noButtonText:
+                                AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+                            yesButtonText:
+                                AllStrings.ha[SharedPrefHelper.chosenLanguage],
+                            noButton: () {
+                              Navigator.pop(context);
+                            },
+                            yesButton: () {
+                              launch(
+                                "https://t.me/uzmobile_xizmatlari",
+                              );
+                              Navigator.pop(context);
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                    DrawerListItem(
+                      icon: Icons.info_outline,
+                      title: AllStrings
+                          .bizHaqimizda[SharedPrefHelper.chosenLanguage],
+                      onPress: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            scrollable: true,
+                            title: Text(
+                              AllStrings.bizHaqimizda[
+                                  SharedPrefHelper.chosenLanguage],
+                            ),
+                            content: Text(
+                              AllStrings.bizHaqimizdaBody[
+                                  SharedPrefHelper.chosenLanguage],
+                            ),
+                            actions: [
+                              FlatButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text(
+                                  AllStrings
+                                      .yopish[SharedPrefHelper.chosenLanguage],
+                                  style: TextStyle(
+                                    color: kMainBlueColor,
+                                    fontSize:
+                                        4 * SizeConfig.safeBlockHorizontal,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    DrawerListItem(
+                      icon: Icons.location_on_outlined,
+                      title:
+                          AllStrings.location[SharedPrefHelper.chosenLanguage],
+                      onPress: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => CustomAlertDialog(
+                            title: AllStrings
+                                .ofisManzili[SharedPrefHelper.chosenLanguage],
+                            noButtonText:
+                                AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+                            yesButtonText:
+                                AllStrings.ha[SharedPrefHelper.chosenLanguage],
+                            noButton: () {
+                              Navigator.pop(context);
+                            },
+                            yesButton: () {
+                              launch(
+                                "https://maps.app.goo.gl/NYxb4U3JkfdSC4H5A",
+                              );
+                              Navigator.pop(context);
+                            },
+                          ),
+                        );
+                      },
+                    ),
                     Divider(thickness: 1.5),
                     DrawerListItem(
                       icon: FlutterIcons.settings_sli,
