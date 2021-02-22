@@ -12,7 +12,7 @@ import 'package:intent/intent.dart' as android_intent;
 import 'package:intent/action.dart' as android_action;
 import 'package:uzmobile/widgets/custom_alert_dialog.dart';
 
-const Color kMainBlueColor = Color(0xff00b4ff);
+const Color kMainBlueColor = Color(0xff228bd6);
 
 const Color kCardIconBackColor = Color(0xffccf0ff);
 

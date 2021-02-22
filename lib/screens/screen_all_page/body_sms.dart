@@ -138,6 +138,7 @@ class _BodySMSState extends State<BodySMS> {
                           style: _currentPage == 2
                               ? textStyleSpotted
                               : textStyleUnSpotted,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
