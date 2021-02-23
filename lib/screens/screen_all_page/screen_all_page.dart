@@ -7,6 +7,7 @@ import 'package:uzmobile/constants/firebase_helper.dart';
 import 'package:uzmobile/constants/strings.dart';
 import 'package:uzmobile/screens/screen_all_page/body_daqiqa.dart';
 import 'package:uzmobile/screens/screen_all_page/body_internet.dart';
+import 'package:uzmobile/screens/screen_all_page/body_number.dart';
 import 'package:uzmobile/screens/screen_all_page/body_sms.dart';
 import 'package:uzmobile/screens/screen_all_page/body_tarif.dart';
 import 'package:uzmobile/screens/screen_all_page/body_xizmat.dart';
@@ -88,12 +89,23 @@ class _AllPageScreenState extends State<AllPageScreen> {
       case FirebaseTables.sms:
         return BodySMS();
         break;
+      case FirebaseTables.k1:
+        return BodyNumber(numberCategory: 1);
+        break;
+      case FirebaseTables.k2:
+        return BodyNumber(numberCategory: 2);
+        break;
+      case FirebaseTables.k3:
+        return BodyNumber(numberCategory: 3);
+        break;
+      case FirebaseTables.k4:
+        return BodyNumber(numberCategory: 4);
+        break;
+      case FirebaseTables.k5:
+        return BodyNumber(numberCategory: 5);
+        break;
       default:
-        return Container(
-          child: Center(
-            child: Text('Hello Boy!'),
-          ),
-        );
+        return BodyNumber(numberCategory: 6);
         break;
     }
   }
@@ -119,8 +131,23 @@ class _AllPageScreenState extends State<AllPageScreen> {
       case FirebaseTables.sms:
         return AllStrings.sms[t];
         break;
-      default:
+      case FirebaseTables.k1:
         return AllStrings.kategoriya1[t];
+        break;
+      case FirebaseTables.k2:
+        return AllStrings.kategoriya2[t];
+        break;
+      case FirebaseTables.k3:
+        return AllStrings.kategoriya3[t];
+        break;
+      case FirebaseTables.k4:
+        return AllStrings.kategoriya4[t];
+        break;
+      case FirebaseTables.k5:
+        return AllStrings.kategoriya5[t];
+        break;
+      default:
+        return AllStrings.kategoriya6[t];
         break;
     }
   }

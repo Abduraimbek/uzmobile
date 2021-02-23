@@ -233,7 +233,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      firebaseTable: FirebaseTables.sms, // todo
+                      firebaseTable: FirebaseTables.k1,
                     ),
                   );
                   setState(() {
@@ -249,7 +249,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      firebaseTable: FirebaseTables.sms, // todo
+                      firebaseTable: FirebaseTables.k2,
                     ),
                   );
                   setState(() {
@@ -265,7 +265,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      firebaseTable: FirebaseTables.sms, // todo
+                      firebaseTable: FirebaseTables.k3,
                     ),
                   );
                   setState(() {
@@ -288,7 +288,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      firebaseTable: FirebaseTables.sms, // todo
+                      firebaseTable: FirebaseTables.k4,
                     ),
                   );
                   setState(() {
@@ -304,7 +304,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      firebaseTable: FirebaseTables.sms, // todo
+                      firebaseTable: FirebaseTables.k5,
                     ),
                   );
                   setState(() {
@@ -320,7 +320,7 @@ class _WidgetCardState extends State<WidgetCard> {
                     context,
                     AllPageScreen.routeName,
                     arguments: AllPageScreenArguments(
-                      firebaseTable: FirebaseTables.sms, // todo
+                      firebaseTable: FirebaseTables.k6,
                     ),
                   );
                   setState(() {

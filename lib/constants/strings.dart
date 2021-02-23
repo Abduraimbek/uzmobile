@@ -62,32 +62,32 @@ class AllStrings {
     "SMS",
   ];
   static const List<String> kategoriya1 = [
-    "Kategoriya 1",
+    "Toifa 1",
     "Категория 1",
     "Category 1",
   ];
   static const List<String> kategoriya2 = [
-    "Kategoriya 2",
+    "Toifa 2",
     "Категория 2",
     "Category 2",
   ];
   static const List<String> kategoriya3 = [
-    "Kategoriya 3",
+    "Toifa 3",
     "Категория 3",
     "Category 3",
   ];
   static const List<String> kategoriya4 = [
-    "Kategoriya 4",
+    "Toifa 4",
     "Категория 4",
     "Category 4",
   ];
   static const List<String> kategoriya5 = [
-    "Kategoriya 5",
+    "Toifa 5",
     "Категория 5",
     "Category 5",
   ];
   static const List<String> kategoriya6 = [
-    "Kategoriya 6",
+    "Toifa 6",
     "Категория 6",
     "Category 6",
   ];
@@ -234,5 +234,29 @@ class AllStrings {
     "Manzil",
     "Место расположения",
     "Location",
+  ];
+
+  static const List<String> narxi = [
+    "Narxi",
+    "Цена",
+    "Price",
+  ];
+
+  static const List<String> operatorBilanBoglanish = [
+    "Operatorga qo'ng'iroq qilish",
+    "Позвоните оператору",
+    "Call the operator",
+  ];
+
+  static const List<String> ofisManziliForNumber = [
+    "Ofis manzili",
+    "Адрес офиса",
+    "Office address",
+  ];
+
+  static const List<String> sum = [
+    "so'm",
+    "сум",
+    "sum",
   ];
 }
