@@ -104,36 +104,21 @@ void launchUrl({
       );
     }
   } else {
-    if (await Permission.phone.request().isGranted) {
-      showDialog(
-        context: context,
-        builder: (_) => CustomAlertDialog(
-          yesButton: () {
-            launch("tel:$ussdCode");
-          },
-          noButton: () {
-            Navigator.pop(context);
-          },
-          title: dialogTitle,
-          noButtonText: AllStrings.yuq[SharedPrefHelper.chosenLanguage],
-          yesButtonText:
-              AllStrings.aktivlashtirish[SharedPrefHelper.chosenLanguage],
-        ),
-      );
-    } else {
-      showDialog(
-        context: context,
-        builder: (_) => CupertinoAlertDialog(
-          title: Text(
-            AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
-          ),
-          content: Icon(
-            Icons.error_outline,
-            color: Colors.red,
-            size: 20 * SizeConfig.safeBlockHorizontal,
-          ),
-        ),
-      );
-    }
+    showDialog(
+      context: context,
+      builder: (_) => CustomAlertDialog(
+        yesButton: () {
+          launch("tel:$ussdCode");
+        },
+        noButton: () {
+          Navigator.pop(context);
+        },
+        title: dialogTitle,
+        text: text != null ? text : null,
+        noButtonText: AllStrings.yuq[SharedPrefHelper.chosenLanguage],
+        yesButtonText:
+            AllStrings.aktivlashtirish[SharedPrefHelper.chosenLanguage],
+      ),
+    );
   }
 }

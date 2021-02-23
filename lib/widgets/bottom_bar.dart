@@ -204,35 +204,19 @@ _launchURL({
       );
     }
   } else {
-    if (await Permission.phone.request().isGranted) {
-      showDialog(
-        context: context,
-        builder: (_) => CustomAlertDialog(
-          yesButton: () {
-            launch("tel:$uSSDCode");
-          },
-          noButton: () {
-            Navigator.pop(context);
-          },
-          title: dialogTitle,
-          noButtonText: noButtonText,
-          yesButtonText: yesButtonText,
-        ),
-      );
-    } else {
-      showDialog(
-        context: context,
-        builder: (_) => CupertinoAlertDialog(
-          title: Text(
-            AllStrings.callPermissionDialog[SharedPrefHelper.chosenLanguage],
-          ),
-          content: Icon(
-            Icons.error_outline,
-            color: Colors.red,
-            size: 20 * SizeConfig.safeBlockHorizontal,
-          ),
-        ),
-      );
-    }
+    showDialog(
+      context: context,
+      builder: (_) => CustomAlertDialog(
+        yesButton: () {
+          launch("tel:$uSSDCode");
+        },
+        noButton: () {
+          Navigator.pop(context);
+        },
+        title: dialogTitle,
+        noButtonText: noButtonText,
+        yesButtonText: yesButtonText,
+      ),
+    );
   }
 }
