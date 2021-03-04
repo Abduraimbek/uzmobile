@@ -31,7 +31,7 @@ class _ScreenHomeState extends State<ScreenHome> {
       appBar: AppBar(
         backgroundColor: kMainBlueColor,
         toolbarHeight: 7.5 * SizeConfig.safeBlockVertical,
-        title: Text(''),
+        title: Text('Uzmobile'),
         elevation: 4,
         leading: IconButton(
           icon: Icon(

@@ -61,6 +61,11 @@ class AllStrings {
     "СМС",
     "SMS",
   ];
+  static const List<String> kategoriya = [
+    "Toifa",
+    "Категория",
+    "Category",
+  ];
   static const List<String> kategoriya1 = [
     "Toifa 1",
     "Категория 1",

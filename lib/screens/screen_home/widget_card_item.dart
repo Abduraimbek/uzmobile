@@ -17,36 +17,42 @@ class WidgetCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          InkWell(
-            onTap: onPress,
-            child: Container(
-              decoration: BoxDecoration(
-                color: kCardIconBackColor,
-                shape: BoxShape.circle,
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(3 * SizeConfig.safeBlockHorizontal),
-                child: Icon(
-                  iconData,
-                  color: kMainBlueColor,
-                  size: 11 * SizeConfig.safeBlockHorizontal,
+      child: Padding(
+        padding: EdgeInsets.only(
+          top: SizeConfig.safeBlockVertical * 2,
+          // bottom: SizeConfig.safeBlockVertical * 2,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            InkWell(
+              onTap: onPress,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: kCardIconBackColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(3 * SizeConfig.safeBlockHorizontal),
+                  child: Icon(
+                    iconData,
+                    color: kMainBlueColor,
+                    size: 11 * SizeConfig.safeBlockHorizontal,
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 0.8 * SizeConfig.safeBlockVertical),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
-              color: Colors.black54,
-            ),
-          )
-        ],
+            SizedBox(height: 0.8 * SizeConfig.safeBlockVertical),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
+                color: Colors.black54,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
