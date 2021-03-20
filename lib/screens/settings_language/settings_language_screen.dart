@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/strings.dart';
+import 'package:uzmobile/screens/screen_home/screen_home.dart';
 
 class SettingsLanguageScreen extends StatefulWidget {
   static String routeName = '/SettingsLanguageScreen';
@@ -30,7 +31,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: kMainBlueColor,
+        backgroundColor: kPrimaryWithOpacity,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -44,7 +45,11 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
               () {
                 setState(() {
                   SharedPrefHelper.changeLanguage(SharedPrefHelper.uzbek);
-                  Navigator.pop(context);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    ScreenHome.routeName,
+                    (route) => false,
+                  );
                 });
               },
             ),
@@ -56,7 +61,11 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
               () {
                 setState(() {
                   SharedPrefHelper.changeLanguage(SharedPrefHelper.russian);
-                  Navigator.pop(context);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    ScreenHome.routeName,
+                    (route) => false,
+                  );
                 });
               },
             ),
@@ -68,7 +77,11 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
               () {
                 setState(() {
                   SharedPrefHelper.changeLanguage(SharedPrefHelper.english);
-                  Navigator.pop(context);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    ScreenHome.routeName,
+                    (route) => false,
+                  );
                 });
               },
             ),
@@ -112,7 +125,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
               ? Icon(
                   Icons.check,
                   size: 30,
-                  color: kMainBlueColor,
+                  color: kPrimaryWithOpacity,
                 )
               : SizedBox(),
         ],

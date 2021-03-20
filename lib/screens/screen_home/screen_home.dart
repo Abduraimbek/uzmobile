@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:uzmobile/constants/constants.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
-import 'package:uzmobile/constants/size_config.dart';
-import 'package:uzmobile/constants/strings.dart';
-import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
-import 'package:uzmobile/widgets/bottom_bar.dart';
-import 'package:uzmobile/widgets/custom_alert_dialog.dart';
-import 'package:uzmobile/widgets/drawer.dart';
+import 'package:uzmobile/widgets/drawer_2.dart';
 
 import 'body.dart';
 
@@ -20,7 +13,7 @@ class ScreenHome extends StatefulWidget {
 }
 
 class _ScreenHomeState extends State<ScreenHome> {
-  final _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int chosenLanguage;
 
   @override
@@ -28,117 +21,25 @@ class _ScreenHomeState extends State<ScreenHome> {
     chosenLanguage = SharedPrefHelper.chosenLanguage;
     return Scaffold(
       key: _scaffoldKey,
+      backgroundColor: kScaffoldBg,
       appBar: AppBar(
-        backgroundColor: kMainBlueColor,
-        toolbarHeight: 7.5 * SizeConfig.safeBlockVertical,
-        title: Text('Uzmobile'),
-        elevation: 4,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: Icon(
-            FlutterIcons.menu_mco,
-            size: 8 * SizeConfig.safeBlockHorizontal,
+            Icons.menu,
             color: Colors.white,
           ),
           onPressed: () {
             _scaffoldKey.currentState.openDrawer();
           },
         ),
-        centerTitle: false,
-        actions: [
-          InkWell(
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (_) => CustomAlertDialog(
-                  title: AllStrings.telegramAlertDialog[chosenLanguage],
-                  noButtonText: AllStrings.yuq[chosenLanguage],
-                  yesButtonText: AllStrings.ha[chosenLanguage],
-                  noButton: () {
-                    Navigator.pop(context);
-                  },
-                  yesButton: () {
-                    launch(
-                      "https://t.me/uzmobile_xizmatlari",
-                    );
-                    Navigator.pop(context);
-                  },
-                ),
-              );
-            },
-            child: Icon(
-              FlutterIcons.telegram_mco,
-              size: 9 * SizeConfig.safeBlockHorizontal,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(width: 4 * SizeConfig.safeBlockHorizontal),
-          InkWell(
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (_) => CustomAlertDialog(
-                  title: AllStrings.ofisManzili[chosenLanguage],
-                  noButtonText: AllStrings.yuq[chosenLanguage],
-                  yesButtonText: AllStrings.ha[chosenLanguage],
-                  noButton: () {
-                    Navigator.pop(context);
-                  },
-                  yesButton: () {
-                    launch(
-                      "https://maps.app.goo.gl/NYxb4U3JkfdSC4H5A",
-                    );
-                    Navigator.pop(context);
-                  },
-                ),
-              );
-            },
-            child: Icon(
-              Icons.location_on_outlined,
-              size: 8 * SizeConfig.safeBlockHorizontal,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(width: 3.5 * SizeConfig.safeBlockHorizontal),
-        ],
       ),
+      extendBodyBehindAppBar: true,
       drawer: Drawer(
-        child: CustomDrawer(
-          onResult: () {
-            setState(() {
-              chosenLanguage = SharedPrefHelper.chosenLanguage;
-            });
-          },
-        ),
+        child: CustomDrawer2(),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: kOrange,
-        child: Icon(
-          FlutterIcons.home_ant,
-          size: 9 * SizeConfig.safeBlockHorizontal,
-          color: Colors.white,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(
-        onPressSettings: () async {
-          await Navigator.pushNamed(
-            context,
-            SettingsLanguageScreen.routeName,
-          );
-          setState(() {
-            chosenLanguage = SharedPrefHelper.chosenLanguage;
-          });
-        },
-      ),
-      body: Body(
-        chosenLanguage: chosenLanguage,
-        notifyParent: () {
-          setState(() {
-            chosenLanguage = SharedPrefHelper.chosenLanguage;
-          });
-        },
-      ),
+      body: Body(),
     );
   }
 }

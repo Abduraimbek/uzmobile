@@ -12,31 +12,11 @@ import 'package:intent/intent.dart' as android_intent;
 import 'package:intent/action.dart' as android_action;
 import 'package:uzmobile/widgets/custom_alert_dialog.dart';
 
-const Color kMainBlueColor = Color(0xff228bd6);
-
-const Color kCardIconBackColor = Color(0xffccf0ff);
-
-const Color kBottomBarColor = Color(0xff228bd6);
-
-const Color kOrange = Color(0xffffd12d);
-
-BoxDecoration decorationSpotted = BoxDecoration(
-  borderRadius: BorderRadius.circular(
-    1 * SizeConfig.safeBlockHorizontal,
-  ),
-  color: Colors.white,
-);
-
-BoxDecoration decorationUnSpotted = BoxDecoration(
-  color: kMainBlueColor,
-  borderRadius: BorderRadius.circular(
-    2 * SizeConfig.safeBlockHorizontal,
-  ),
-  border: Border.all(
-    color: Colors.white,
-    width: 0.3 * SizeConfig.safeBlockHorizontal,
-  ),
-);
+const Color kPrimary = Color(0xff1484c6);
+Color kPrimaryWithOpacityBottom = Color(0xff1484c6).withOpacity(0.8);
+Color kPrimaryWithOpacity = Color(0xff1484c6).withOpacity(0.4);
+const Color kScaffoldBg = Color(0xfff9f9f9);
+const Color kDarkBlue = Color(0xff060c0f);
 
 BoxDecoration boxDecoration = BoxDecoration(
   color: Colors.white,
@@ -44,19 +24,9 @@ BoxDecoration boxDecoration = BoxDecoration(
     4 * SizeConfig.safeBlockHorizontal,
   ),
   border: Border.all(
-    color: kBottomBarColor,
+    color: kPrimaryWithOpacityBottom,
     width: 0.3 * SizeConfig.safeBlockHorizontal,
   ),
-);
-
-TextStyle textStyleSpotted = TextStyle(
-  color: kMainBlueColor,
-  fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
-);
-
-TextStyle textStyleUnSpotted = TextStyle(
-  color: Colors.white,
-  fontSize: 3.5 * SizeConfig.safeBlockHorizontal,
 );
 
 void launchUrl({

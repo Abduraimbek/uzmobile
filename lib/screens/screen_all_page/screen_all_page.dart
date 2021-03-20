@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:uzmobile/constants/constants.dart';
+import 'package:uzmobile/constants/firebase_helper.dart';
 import 'package:uzmobile/constants/shared_preferences.dart';
 import 'package:uzmobile/constants/size_config.dart';
-import 'package:uzmobile/constants/firebase_helper.dart';
 import 'package:uzmobile/constants/strings.dart';
-import 'package:uzmobile/screens/screen_all_page/body_daqiqa.dart';
-import 'package:uzmobile/screens/screen_all_page/body_internet.dart';
-import 'package:uzmobile/screens/screen_all_page/body_number.dart';
-import 'package:uzmobile/screens/screen_all_page/body_sms.dart';
-import 'package:uzmobile/screens/screen_all_page/body_tarif.dart';
-import 'package:uzmobile/screens/screen_all_page/body_xizmat.dart';
-import 'package:uzmobile/screens/settings_language/settings_language_screen.dart';
-import 'package:uzmobile/widgets/bottom_bar.dart';
-
-import 'body_ussd.dart';
+import 'package:uzmobile/screens/screen_all_page/body_daqiqa_2.dart';
+import 'package:uzmobile/screens/screen_all_page/body_internet_2.dart';
+import 'package:uzmobile/screens/screen_all_page/body_number_2.dart';
+import 'package:uzmobile/screens/screen_all_page/body_sms_2.dart';
+import 'package:uzmobile/screens/screen_all_page/body_tariff_2.dart';
+import 'package:uzmobile/screens/screen_all_page/body_ussd_2.dart';
+import 'package:uzmobile/screens/screen_all_page/body_xizmat_2.dart';
 
 class AllPageScreen extends StatefulWidget {
   static String routeName = '/AllPageScreen';
@@ -29,41 +25,10 @@ class _AllPageScreenState extends State<AllPageScreen> {
     final AllPageScreenArguments arguments =
         ModalRoute.of(context).settings.arguments;
     return Scaffold(
-      backgroundColor: kMainBlueColor,
-      appBar: AppBar(
-        title: Text(
-          findOutAppbarTitle(arguments.firebaseTable),
-        ),
-        backgroundColor: kMainBlueColor,
-        elevation: 0,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        backgroundColor: kOrange,
-        child: Icon(
-          FlutterIcons.home_ant,
-          size: 9 * SizeConfig.safeBlockHorizontal,
-          color: Colors.white,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Container(
-        color: Colors.white,
-        child: BottomBar(
-          onPressSettings: () async {
-            await Navigator.pushNamed(
-              context,
-              SettingsLanguageScreen.routeName,
-            );
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      backgroundColor: kScaffoldBg,
       body: Container(
-        width: double.infinity,
-        height: double.infinity,
+        width: SizeConfig.screenWidth,
+        height: SizeConfig.screenHeight,
         child: chosenBody(arguments.firebaseTable),
       ),
     );
@@ -72,40 +37,58 @@ class _AllPageScreenState extends State<AllPageScreen> {
   Widget chosenBody(FirebaseTables firebaseTable) {
     switch (firebaseTable) {
       case FirebaseTables.ussd:
-        return BodyUSSD();
+        return BodyUSSD2();
         break;
       case FirebaseTables.service:
-        return BodyXizmat();
+        return BodyXizmat2();
         break;
       case FirebaseTables.daqiqa:
-        return BodyDaqiqa();
+        return BodyDaqiqa2();
         break;
       case FirebaseTables.internet:
-        return BodyInternet();
+        return BodyInternet2();
         break;
       case FirebaseTables.tariff:
-        return BodyTarif();
+        return BodyTariff2();
         break;
       case FirebaseTables.sms:
-        return BodySMS();
+        return BodySMS2();
         break;
       case FirebaseTables.k1:
-        return BodyNumber(numberCategory: 1);
+        return BodyNumber2(
+          numberCategory: 1,
+          appBarTitle: findOutAppbarTitle(firebaseTable),
+        );
         break;
       case FirebaseTables.k2:
-        return BodyNumber(numberCategory: 2);
+        return BodyNumber2(
+          numberCategory: 2,
+          appBarTitle: findOutAppbarTitle(firebaseTable),
+        );
         break;
       case FirebaseTables.k3:
-        return BodyNumber(numberCategory: 3);
+        return BodyNumber2(
+          numberCategory: 3,
+          appBarTitle: findOutAppbarTitle(firebaseTable),
+        );
         break;
       case FirebaseTables.k4:
-        return BodyNumber(numberCategory: 4);
+        return BodyNumber2(
+          numberCategory: 4,
+          appBarTitle: findOutAppbarTitle(firebaseTable),
+        );
         break;
       case FirebaseTables.k5:
-        return BodyNumber(numberCategory: 5);
+        return BodyNumber2(
+          numberCategory: 5,
+          appBarTitle: findOutAppbarTitle(firebaseTable),
+        );
         break;
       default:
-        return BodyNumber(numberCategory: 6);
+        return BodyNumber2(
+          numberCategory: 6,
+          appBarTitle: findOutAppbarTitle(firebaseTable),
+        );
         break;
     }
   }

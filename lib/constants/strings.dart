@@ -1,6 +1,12 @@
 import 'dart:core';
 
 class AllStrings {
+  static const List<String> milliyOperator = [
+    "MILLIY OPERATOR",
+    "НАЦИОНАЛЬНЫЙ ОПЕРАТОР",
+    "NATIONAL OPERATOR",
+  ];
+
   static const List<String> uzbekdaDavomEttirish = [
     "O'zbek tilida davom ettirish",
     "Продолжить на русском",
